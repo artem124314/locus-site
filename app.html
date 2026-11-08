@@ -1,0 +1,1922 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Локус — кабинет бизнеса на Яндекс.Картах</title>
+<meta name="description" content="Локус — рабочий кабинет для бизнеса на Яндекс.Картах: отзывы, прайс, витрина, новости, автопилот и аналитика.">
+<meta name="theme-color" content="#11130e">
+<meta name="robots" content="noindex">
+<link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/lora-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/base.css?v=owner-cabinet1">
+<link rel="stylesheet" href="assets/css/app.css?v=owner-cabinet26">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("locus:theme")==="dark"?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}</script>
+</head>
+<body class="app-body">
+<a class="skip-link" href="#content">К содержанию</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 9.8 9.8 0 01-3.2-.6L3 21l1.7-5.1A8.1 8.1 0 013 11.5 8.4 8.4 0 0112 3a8.4 8.4 0 019 8.5z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M21 15l-5-5-9 9"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V22a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H2a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H8a1.7 1.7 0 001-1.5V2a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V8a1.7 1.7 0 001.5 1H22a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9z"/><path d="M10 21h4"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-12a7 7 0 10-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h4"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 10-2.3 5.7"/><path d="M20 4v7h-7"/></symbol>
+  </defs>
+</svg>
+
+<div class="app-shell">
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Навигация кабинета">
+    <a class="side-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.2 7-12A7 7 0 105 10c0 5.8 7 12 7 12z" fill="#14150f"/><circle cx="12" cy="10" r="2.6" fill="#f4f1e9"/></svg>
+      </span>
+      <span>Локус<small>кабинет для Карт</small></span>
+    </a>
+
+    <div class="side-company">
+      <span class="logo-sq" aria-hidden="true">П</span>
+      <div class="side-company-main">
+        <strong id="sideCompanyName">Организация</strong>
+        <select id="orgSelect" class="side-org-select" aria-label="Выбрать организацию" hidden></select>
+        <span id="sideStatus"><span class="dot"></span> Карточка не подключена</span>
+      </div>
+    </div>
+
+    <nav class="side-nav">
+      <span class="side-label">Карточка</span>
+      <button class="side-link" type="button" data-view="overview" aria-current="page">
+        <svg aria-hidden="true"><use href="#i-grid"/></svg> Карточка
+      </button>
+      <button class="side-link" type="button" data-view="audit">
+        <svg aria-hidden="true"><use href="#i-check"/></svg> Аудит
+      </button>
+      <button class="side-link" type="button" data-view="reviews">
+        <svg aria-hidden="true"><use href="#i-chat"/></svg> Отзывы <span class="side-badge" id="reviewBadge" hidden>0</span>
+      </button>
+      <button class="side-link" type="button" data-view="prices">
+        <svg aria-hidden="true"><use href="#i-box"/></svg> Прайс
+      </button>
+      <button class="side-link" type="button" data-view="storefront">
+        <svg aria-hidden="true"><use href="#i-box"/></svg> Витрина
+      </button>
+      <button class="side-link" type="button" data-view="news">
+        <svg aria-hidden="true"><use href="#i-spark"/></svg> Новости
+      </button>
+      <button class="side-link" type="button" data-view="stories">
+        <svg aria-hidden="true"><use href="#i-image"/></svg> Сторис
+      </button>
+
+      <span class="side-label">Работа</span>
+      <button class="side-link" type="button" data-view="calendar">
+        <svg aria-hidden="true"><use href="#i-clock"/></svg> Календарь
+      </button>
+      <button class="side-link" type="button" data-view="clients">
+        <svg aria-hidden="true"><use href="#i-chat"/></svg> Клиенты <span class="side-badge" id="clientBadge" hidden>0</span>
+      </button>
+      <button class="side-link" type="button" data-view="semantics">
+        <svg aria-hidden="true"><use href="#i-search"/></svg> Запросы
+      </button>
+      <button class="side-link" type="button" data-view="autopilot" id="navQueue" hidden>
+        <svg aria-hidden="true"><use href="#i-bolt"/></svg> Очередь <span class="side-badge" id="autoBadge" hidden>0</span>
+      </button>
+    </nav>
+
+    <button class="side-link side-quiet" type="button" data-view="brandbook">
+      <svg aria-hidden="true"><use href="#i-gear"/></svg> Материалы
+    </button>
+
+    <div class="side-foot">
+      <div class="plan-mini">
+        <div class="plan-mini-top"><strong>Тариф «Стартовый»</strong><span id="planMiniState">до оплаты</span></div>
+        <p id="trialNote">Пробный доступ до оплаты. Карта не нужна.</p>
+        <div class="progress" id="planMiniBar" hidden aria-hidden="true"><i style="width:0%"></i></div>
+        <a href="#" data-open-tariffs>Сменить тариф</a>
+      </div>
+      <button class="side-user" type="button" data-view="settings">
+        <span class="ava" id="sideAvatar" aria-hidden="true">А</span>
+        <div><strong id="sideUserName">Вы</strong><span id="sideUserRole">Владелец</span></div>
+      </button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- ================= MAIN ================= -->
+  <div class="main-col">
+    <header class="topbar">
+      <button class="topbar-burger" id="topbarBurger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="sidebar"><span></span></button>
+      <div class="search">
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="globalSearch">Поиск по кабинету</label>
+        <input id="globalSearch" type="search" placeholder="Поиск по кабинету" autocomplete="off">
+        <div class="search-results" id="searchResults" hidden></div>
+      </div>
+      <div class="topbar-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">Светлая</button>
+        <button class="topbar-search-toggle" id="mobileSearchBtn" type="button" aria-label="Поиск по кабинету" aria-expanded="false" aria-controls="globalSearch">
+          <svg aria-hidden="true"><use href="#i-search"/></svg>
+        </button>
+        <div class="notif-wrap">
+          <button class="icon-btn" id="notifBtn" type="button" aria-label="Уведомления" aria-expanded="false" aria-controls="notifPanel">
+            <svg aria-hidden="true"><use href="#i-bell"/></svg>
+            <span class="notif-count" id="notifCount" hidden>0</span>
+          </button>
+          <div class="notif-panel" id="notifPanel" role="dialog" aria-label="Уведомления и напоминания" hidden>
+            <div class="notif-head">
+              <div><strong>Уведомления</strong><span>что требует внимания</span></div>
+              <button class="notif-read" id="notifReadAll" type="button">Прочитать</button>
+            </div>
+            <div class="notif-list" id="notifList" aria-live="polite"></div>
+            <button class="notif-foot" type="button" data-notif-target="settings">
+              <span>Настроить напоминания</span>
+              <svg width="13" height="13" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+        </div>
+        <button class="topbar-user" type="button" data-view="settings" aria-label="Настройки аккаунта">
+          <span class="ava" id="topAvatar" aria-hidden="true">В</span><span id="topUserName">Вы</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="content" id="content">
+      <h1 class="sr-only">Локус — кабинет бизнеса на Яндекс.Картах</h1>
+      <div class="demo-strip">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="sessionLabel">Рабочий кабинет · данные организации защищены сессией</span>
+        <a class="demo-site" href="index.html">На сайт</a>
+        <a class="demo-action" id="sessionAction" href="login.html">Войти</a>
+      </div>
+
+      <!-- ============ OVERVIEW ============ -->
+      <section class="view" id="view-overview" aria-labelledby="ovTitle">
+        <div class="page-head">
+          <div>
+            <h2 id="ovTitle">Карточка</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Ценность — ежемесячные тексты и запросы, которые люди набирают: ответы, новости, сторис, ключевые слова. Телефон и часы человек видит, когда карточку уже открыл.</span></p>
+            <p id="ovOrg">нет данных</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--small" id="ovReplyQuick" type="button" data-view="reviews">Ответить</button>
+          </div>
+        </div>
+
+        <div class="onboard" id="onboarding" hidden>
+          <div class="onboard-copy">
+            <span class="eyebrow">Карточка</span>
+            <h3>Вставьте ссылку</h3>
+            <p>Прочитаем название, адрес и то, что уже есть на Яндекс.Картах.</p>
+          </div>
+          <form class="onboard-fill" id="fillCard">
+            <label>Ссылка на карточку
+              <input id="fillUrl" name="url" type="url" inputmode="url" placeholder="https://yandex.ru/maps/org/…" required>
+            </label>
+            <div class="onboard-fill__actions">
+              <button class="btn btn--small" type="submit">Прочитать карточку</button>
+              <button class="btn btn--ghost btn--small" type="button" id="fillManual">Ссылка не читается</button>
+            </div>
+            <p class="small" id="fillMsg" role="status"></p>
+          </form>
+          <div id="fillReport" class="fill-report" hidden></div>
+          <div id="fillGaps" class="fill-gaps" hidden></div>
+          <button class="onboard-close" type="button" id="onboardClose" aria-label="Скрыть подсказку">×</button>
+        </div>
+
+        <div class="card-home" id="cardHome">
+          <article class="maps-card" id="cardFace">
+            <div class="maps-card-photo" id="cardFacePhoto"><span>Фото появится с карточки</span></div>
+            <div class="maps-card-body">
+              <h3 id="cardFaceName">Название</h3>
+              <p id="cardFaceMeta"></p>
+              <p id="cardFaceHours"></p>
+              <p id="cardFaceRubrics"></p>
+              <p id="cardFacePrice"></p>
+              <p id="cardFaceRating">Оценка заведения не указана</p>
+              <p id="cardFaceCta"></p>
+              <label class="maps-card-upload">Загрузить фото
+                <input id="cardFaceFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif">
+              </label>
+            </div>
+          </article>
+        </div>
+
+        <div class="kpis" hidden>
+          <article class="kpi">
+            <div class="kpi-top"><svg aria-hidden="true"><use href="#i-star"/></svg> Рейтинг</div>
+            <div class="kpi-value" id="ovRating">—</div>
+            <div class="kpi-foot" id="ovRatingFoot"><span class="delta">средняя</span> по отзывам</div>
+          </article>
+          <article class="kpi">
+            <div class="kpi-top"><svg aria-hidden="true"><use href="#i-chat"/></svg> Отзывы</div>
+            <div class="kpi-value" id="ovReviews">—</div>
+            <div class="kpi-foot" id="ovReviewsFoot"><span class="delta delta--warn" id="ovWaiting">нет данных</span> <span id="ovReviewsNote"></span></div>
+          </article>
+          <article class="kpi">
+            <div class="kpi-top"><svg aria-hidden="true"><use href="#i-clock"/></svg> Ответы на отзывы</div>
+            <div class="kpi-value" id="ovOnTime">—</div>
+            <div class="kpi-foot" id="ovOnTimeFoot"><span class="delta">цель 90%</span> от всех отзывов</div>
+          </article>
+          <article class="kpi">
+            <div class="kpi-top"><svg aria-hidden="true"><use href="#i-chart"/></svg> Публикации</div>
+            <div class="kpi-value" id="ovShows">—</div>
+            <div class="kpi-foot" id="ovShowsFoot"><span class="delta">—</span> новости и сторис</div>
+          </article>
+        </div>
+
+        <div class="grid grid--2" hidden style="margin-bottom:12px">
+          <article class="card" id="ovChartCard">
+            <div class="card-head">
+              <div><div class="card-title">Активность в кабинете</div><div class="card-sub" id="ovChartSub">действия Локуса · без показов Карт</div></div>
+              <button class="card-link" type="button" data-view="analytics">Вся аналитика <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+            <div id="ovChartBody">
+              <div class="an-chart" id="ovChart" role="img" aria-label="Активность за 14 дней"></div>
+              <div class="chart-legend">
+                <span><i style="background:#1d5b45"></i> действия в кабинете</span>
+                <span class="muted">Показы и переходы из Карт не подключены</span>
+              </div>
+            </div>
+            <div class="empty-state" id="ovChartEmpty" hidden>
+              <strong>Пока нет действий</strong>
+              <p>Начните с аудита или ответа на отзыв — активность появится здесь. Показы Карт в Локусе не выдумываются.</p>
+              <button class="btn btn--small" type="button" data-view="audit">Проверить карточку</button>
+            </div>
+          </article>
+
+          <article class="card next-actions" id="nextActions">
+            <div class="card-head">
+              <div><div class="card-title">Ближайшие действия</div><div class="card-sub"><span id="actionsDone">0 из 5</span> · сначала то, что влияет на карточку</div></div>
+              <span class="action-progress" id="actionsRing" aria-hidden="true">0/5</span>
+            </div>
+            <ol class="action-list">
+              <li class="action-item is-next">
+                <span class="action-num">1</span>
+                <div class="action-copy"><strong id="ovActionReviews">Ответить на отзывы</strong><span id="ovActionReviewsSub">Проверьте новые отзывы</span></div>
+                <button class="mini-btn" type="button" id="ovActionPrimaryBtn" data-view="reviews">Ответить</button>
+              </li>
+              <li class="action-item">
+                <span class="action-num">2</span>
+                <div class="action-copy"><strong>Дозаполнить прайс</strong><span>проверьте позиции без цены и описания</span></div>
+                <button class="mini-btn" type="button" data-view="prices">Открыть прайс</button>
+              </li>
+              <li class="action-item">
+                <span class="action-num">3</span>
+                <div class="action-copy"><strong>Добавить изображения</strong><span>обложка и кадры для меню</span></div>
+                <button class="mini-btn" type="button" data-view="images">Сгенерировать</button>
+              </li>
+              <li class="action-item">
+                <span class="action-num">4</span>
+                <div class="action-copy"><strong>Опубликовать новость</strong><span id="ovNewsTopic">3 мин · тема под вашу карточку</span></div>
+                <button class="mini-btn" type="button" data-view="news">Собрать</button>
+              </li>
+              <li class="action-item">
+                <span class="action-num">5</span>
+                <div class="action-copy"><strong>Закрыть запросы</strong><span>фразы, по которым ищут точку</span></div>
+                <button class="mini-btn" type="button" data-view="semantics">Добавить</button>
+              </li>
+            </ol>
+            <div class="week-strip" aria-label="План на неделю">
+              <span class="week-label">Неделя</span>
+              <button type="button" class="week-day" data-dow="0">Пн</button>
+              <button type="button" class="week-day" data-dow="1">Вт</button>
+              <button type="button" class="week-day" data-dow="2">Ср</button>
+              <button type="button" class="week-day" data-dow="3">Чт</button>
+              <button type="button" class="week-day" data-dow="4">Пт</button>
+              <button type="button" class="week-day" data-dow="5">Сб</button>
+              <button type="button" class="week-day" data-dow="6">Вс</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid grid--3" hidden>
+          <article class="card" id="ovToneCard">
+            <div class="card-head"><div class="card-title">Тональность</div><div class="card-sub">за 30 дней</div></div>
+            <div class="tone-row" hidden><span>5 звёзд</span><span class="bar"><i style="width:0%"></i></span><b>0</b></div>
+            <div class="tone-row" hidden><span>4 звезды</span><span class="bar"><i style="width:0%"></i></span><b>0</b></div>
+            <div class="tone-row" hidden><span>1–3 звезды</span><span class="bar"><i style="width:0%"></i></span><b>0</b></div>
+            <p class="card-sub" id="ovToneFoot" style="margin-top:10px" hidden>Распределение появится после загрузки отзывов. Это не динамика рейтинга в Картах.</p>
+            <div class="empty-state" id="ovToneEmpty">
+              <strong>Оценок пока нет</strong>
+              <p>нет данных</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-head"><div><div class="card-title">Топ запросов</div><div class="card-sub" id="ovQueryNote">нет данных, пока нет Wordstat</div></div><button class="card-link" type="button" data-view="semantics">Запросы <svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            <div class="mini-list" id="overviewQueries">
+              <div class="mini-list-row"><span class="rank">—</span><span class="q">Ядро ещё не собрано</span><b>нет данных</b></div>
+            </div>
+          </article>
+
+          <article class="card" id="ovFocusCard">
+            <div class="card-head"><div class="card-title">Фокус недели</div><div class="card-sub" id="ovFocusSub">3 направления</div></div>
+            <div class="focus-list" hidden>
+              <div class="focus-row"><span class="focus-ico">01</span><div><strong>Полнота карточки</strong><span>цены, категории, особенности</span></div><b>—</b></div>
+              <div class="focus-row"><span class="focus-ico">02</span><div><strong>Свежий контент</strong><span>новости и сторис</span></div><b>—</b></div>
+              <div class="focus-row"><span class="focus-ico">03</span><div><strong>Ответы</strong><span>по отзывам в кабинете</span></div><b>—</b></div>
+            </div>
+            <div class="empty-state" id="ovFocusEmpty">
+              <strong>Начните с проверки карточки</strong>
+              <p>После аудита здесь появится план на неделю.</p>
+            </div>
+            <button class="btn btn--ghost btn--small btn--full" type="button" data-view="audit">Открыть проверку карточки</button>
+          </article>
+        </div>
+      
+        <article class="card card-passport" style="margin-top:18px">
+          <div class="card-head">
+            <div><div class="card-title">Чего не хватает</div><div class="card-sub">Только дыры. Заполненное здесь не показываем.</div></div>
+            <span class="delta" id="ovPassportCount">6 блоков</span>
+          </div>
+          <div class="passport-grid">
+            <div class="passport-item" id="ovPassContacts"><span class="passport-mark">…</span><div><strong>Название, адрес, телефон</strong><span id="ovPassportContacts">проверяем…</span></div></div>
+            <div class="passport-item" id="ovPassHours"><span class="passport-mark">…</span><div><strong>Часы и сайт</strong><span id="ovPassportHours">проверяем…</span></div></div>
+            <div class="passport-item is-warn"><span class="passport-mark">!</span><div><strong>Рубрики</strong><span id="ovPassportCategories">проверяем…</span></div><button class="mini-btn" type="button" data-view="cabinet">Заполнить</button></div>
+            <div class="passport-item is-warn"><span class="passport-mark">!</span><div><strong>Особенности</strong><span id="ovPassportFeatures">проверяем…</span></div><button class="mini-btn" type="button" data-view="cabinet">Добавить</button></div>
+            <div class="passport-item is-warn"><span class="passport-mark">!</span><div><strong>Прайс</strong><span id="ovPassportPrices">— позиций</span></div><button class="mini-btn" type="button" data-view="prices">Открыть прайс</button></div>
+            <div class="passport-item is-warn"><span class="passport-mark">!</span><div><strong>Кнопка действия и новости</strong><span id="ovPassportCta">—</span></div><button class="mini-btn" type="button" data-view="news">Собрать</button></div>
+          </div>
+          <form class="passport-hours" id="ovHoursForm" hidden>
+            <p class="small">Часы пустые. Напишите будни, выходные и праздники.</p>
+            <label class="field" for="ovHoursWeekdays">Будни
+              <input id="ovHoursWeekdays" name="hoursWeekdays" type="text" maxlength="80" placeholder="например 10:00–19:00" autocomplete="off">
+            </label>
+            <label class="field" for="ovHoursWeekends">Выходные
+              <input id="ovHoursWeekends" name="hoursWeekends" type="text" maxlength="80" placeholder="например 11:00–17:00" autocomplete="off">
+            </label>
+            <label class="field" for="ovHoursHolidays">Праздники
+              <input id="ovHoursHolidays" name="hoursHolidays" type="text" maxlength="80" placeholder="например выходной" autocomplete="off">
+            </label>
+            <button class="btn btn--small" type="submit">Сохранить в кабинете</button>
+            <p class="small" id="ovHoursMsg">Телефон и часы человек видит, когда карточку уже открыл. В поиск карточка попадает текстами. Разовая настройка оставляет её адресом.</p>
+          </form>
+        </article>
+</section>
+
+      <!-- ============ REVIEWS ============ -->
+      <section class="view" id="view-calendar" aria-labelledby="calTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="calTitle">Календарь</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Ритм текстов и публикаций. Карточка поднимается в выдаче. Первое место не обещаем.</span></p>
+            <p id="calSub">План действий, публикаций и отчётов — по дням</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--ghost btn--small" type="button" id="calTodayTop">Сегодня</button>
+            <button class="btn btn--small" type="button" id="calSpread">Разложить на месяц</button>
+            <button class="btn btn--small" type="button" id="calRefresh"><svg width="14" height="14" aria-hidden="true"><use href="#i-refresh"/></svg> Обновить</button>
+          </div>
+        </div>
+        <div class="calendar-layout">
+          <article class="card calendar-card">
+            <div class="calendar-head">
+              <button class="icon-btn" type="button" id="calPrev" aria-label="Предыдущий месяц">←</button>
+              <h3 id="calMonthTitle">Октябрь 2026</h3>
+              <button class="icon-btn" type="button" id="calNext" aria-label="Следующий месяц">Дальше</button>
+            </div>
+            <div class="calendar-weekdays" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+            <div class="calendar-grid" id="calendarGrid" role="grid" aria-label="Календарь задач"></div>
+            <div class="calendar-legend">
+              <span><i class="cal-dot cal-dot--queue"></i> очередь</span>
+              <span><i class="cal-dot cal-dot--review"></i> отзывы</span>
+              <span><i class="cal-dot cal-dot--news"></i> новости</span>
+              <span><i class="cal-dot cal-dot--report"></i> отчёты</span>
+            </div>
+          </article>
+          <article class="card calendar-agenda">
+            <div class="card-head"><div><div class="card-title" id="calAgendaTitle">Выберите день</div><div class="card-sub" id="calAgendaSub">Задачи и публикации появятся здесь</div></div><span class="chip" id="calDayCount">0</span></div>
+            <div id="calAgenda" class="cal-agenda-list"></div>
+            <div class="row-actions" style="margin-top:10px">
+              <button class="btn btn--small" type="button" id="calAddTask">Запланировать действие</button>
+              <button class="btn btn--ghost btn--small" type="button" data-view="settings">К настройкам</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="view-clients" aria-labelledby="clientsTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="clientsTitle">Клиенты</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Кто был у вас. Отсюда уходит просьба об отзыве.</span></p>
+            <p>Кто был, как прошёл визит и кому уже можно отправить ссылку на отзыв</p>
+          </div>
+          <div class="page-actions">
+            <a class="btn btn--ghost btn--small" id="clientTemplateLink" href="#" download>Шаблон Excel</a>
+            <button class="btn btn--ghost btn--small" type="button" id="clientImportBtn">Загрузить Excel</button>
+            <button class="btn btn--small" type="button" id="clientAddBtn">Добавить клиента</button>
+          </div>
+        </div>
+
+        <div class="client-stats" aria-label="Сводка по клиентам">
+          <div class="client-stat"><span>Всего клиентов</span><strong id="clientStatTotal">0</strong><small>из загрузки и ручного ввода</small></div>
+          <div class="client-stat"><span>Ждут обратную связь</span><strong id="clientStatWaiting">0</strong><small>приглашение отправлено</small></div>
+          <div class="client-stat"><span>Отзывы готовы</span><strong id="clientStatReady">0</strong><small>можно проверить и отправить</small></div>
+          <div class="client-stat"><span>Средняя оценка</span><strong id="clientStatRating">—</strong><small>по словам клиентов</small></div>
+        </div>
+
+        <div class="client-import-note">
+          <span class="client-import-ico">↥</span>
+          <div><strong>Excel, CSV или JSON из CRM</strong><span>Колонки: Имя, Телефон, Мессенджер, Дата визита, Услуга, Согласие. JSON принимает массив <code>clients</code> — можно выгрузить из CRM. Данные остаются на вашем сервере, Локус не отправляет их во внешние сервисы.</span></div>
+        </div>
+
+        <div class="client-layout">
+          <aside class="card client-list-card">
+            <div class="client-list-head">
+              <div><strong>База визитов</strong><span id="clientListCount">0 клиентов</span></div>
+              <button class="icon-btn" type="button" id="clientRefreshBtn" aria-label="Обновить список"><svg aria-hidden="true"><use href="#i-refresh"/></svg></button>
+            </div>
+            <div class="client-tools">
+              <label class="sr-only" for="clientSearch">Найти клиента</label>
+              <input id="clientSearch" type="search" placeholder="Имя, телефон или услуга">
+              <label class="sr-only" for="clientStatusFilter">Статус</label>
+              <select id="clientStatusFilter">
+                <option value="">Все статусы</option>
+                <option value="new">Не приглашены</option>
+                <option value="requested">Ждём ОС</option>
+                <option value="feedback">ОС получена</option>
+                <option value="review_ready">Отзыв готов</option>
+                <option value="sent">Ссылка отправлена</option>
+              </select>
+            </div>
+            <div class="client-list" id="clientList" aria-live="polite"></div>
+            <div class="client-list-empty" id="clientEmpty" hidden>
+              <strong>Пока пусто</strong>
+              <p>Загрузите выгрузку из CRM или добавьте первого клиента вручную.</p>
+              <button class="btn btn--ghost btn--small" type="button" id="clientEmptyImport">Загрузить файл</button>
+            </div>
+            <p class="client-privacy">Только для приглашений по согласию. Не храните лишние персональные данные — удаляйте клиента после решения.</p>
+          </aside>
+
+          <article class="card client-detail-card" id="clientDetailCard">
+            <div class="client-detail-empty" id="clientDetailEmpty">
+              <span class="client-detail-mark">ОС</span>
+              <h3>Выберите клиента</h3>
+              <p>Слева — визиты. В карточке можно собрать персональное сообщение, записать впечатление гостя и получить отзыв из его слов.</p>
+            </div>
+
+            <div id="clientDetail" hidden>
+              <div class="client-detail-head">
+                <div>
+                  <h3 id="clientDetailName">Имя</h3>
+                  <div class="client-detail-kicker" id="clientDetailStatus">Новый клиент</div>
+                  <p id="clientDetailMeta">Визит · услуга</p>
+                </div>
+                <div class="client-detail-actions">
+                  <button class="btn btn--ghost btn--small" type="button" id="clientEditBtn">Изменить</button>
+                  <button class="icon-btn" type="button" id="clientDeleteBtn" aria-label="Удалить клиента">×</button>
+                </div>
+              </div>
+              <div class="client-facts">
+                <span><b>Канал</b><strong id="clientDetailChannel">—</strong></span>
+                <span><b>Контакт</b><strong id="clientDetailContact">—</strong></span>
+                <span><b>Согласие</b><strong id="clientDetailConsent">—</strong></span>
+              </div>
+
+              <div class="client-step">
+                <div class="client-step-num">1</div>
+                <div class="client-step-body">
+                  <div class="client-step-head"><strong>Приглашение в мессенджер</strong><span id="clientRequestState">черновик</span></div>
+                  <p class="field-hint">Сначала спрашиваем впечатление, а не отзыв. Ссылку на карточку отправим позже, если человек захочет.</p>
+                  <label class="sr-only" for="clientRequestText">Сообщение клиенту</label>
+                  <textarea id="clientRequestText" rows="5" readonly></textarea>
+                  <div class="client-actions-row">
+                    <button class="btn btn--ghost btn--small" type="button" id="clientRequestGen">Собрать сообщение</button>
+                    <button class="btn btn--ghost btn--small" type="button" id="clientRequestCopy">Скопировать</button>
+                    <a class="btn btn--small" id="clientRequestOpen" href="#" target="_blank" rel="noopener">Открыть мессенджер</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="client-step">
+                <div class="client-step-num">2</div>
+                <div class="client-step-body">
+                  <div class="client-step-head"><strong>Что сказал клиент</strong><span>его слова</span></div>
+                  <div class="client-feedback-row">
+                    <label for="clientRating">Оценка визита</label>
+                    <select id="clientRating">
+                      <option value="0">Без оценки</option>
+                      <option value="5">5 — очень понравилось</option>
+                      <option value="4">4 — скорее понравилось</option>
+                      <option value="3">3 — обычно</option>
+                      <option value="2">2 — были проблемы</option>
+                      <option value="1">1 — плохо</option>
+                    </select>
+                  </div>
+                  <label class="sr-only" for="clientFeedback">Обратная связь клиента</label>
+                  <textarea id="clientFeedback" rows="4" placeholder="Например: понравился завтрак и тишина, но ждали кофе 15 минут"></textarea>
+                  <div class="client-actions-row">
+                    <button class="btn btn--small" type="button" id="clientFeedbackSave">Сохранить ОС и собрать отзыв</button>
+                    <span class="field-hint" id="clientFeedbackHint">Только факты из слов клиента. Ничего не выдумываем.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="client-step">
+                <div class="client-step-num">3</div>
+                <div class="client-step-body">
+                  <div class="client-step-head"><strong>Отзыв и ссылка на публикацию</strong><span id="clientReviewState">ещё не собран</span></div>
+                  <p class="field-hint" id="clientReviewNote">SEO-текст соберётся из обратной связи. Его нужно проверить и отправить клиенту — сам он не публикуется.</p>
+                  <label class="sr-only" for="clientReviewText">Отзыв</label>
+                  <textarea id="clientReviewText" rows="7" placeholder="Сначала сохраните обратную связь — отзыв появится здесь."></textarea>
+                  <div class="client-actions-row">
+                    <button class="btn btn--ghost btn--small" type="button" id="clientReviewGen">Пересобрать</button>
+                    <button class="btn btn--ghost btn--small" type="button" id="clientReviewCopy">Скопировать отзыв</button>
+                    <button class="btn btn--ghost btn--small" type="button" id="clientReviewMaps">Открыть Карты</button>
+                  </div>
+                  <div class="client-publish-box">
+                    <label for="clientPublishText">Сообщение клиенту со ссылкой</label>
+                    <textarea id="clientPublishText" rows="5" readonly></textarea>
+                    <div class="client-actions-row">
+                      <button class="btn btn--ghost btn--small" type="button" id="clientPublishCopy">Скопировать сообщение</button>
+                      <a class="btn btn--small" id="clientPublishOpen" href="#" target="_blank" rel="noopener">Открыть мессенджер</a>
+                      <button class="btn btn--ghost btn--small" type="button" id="clientMarkSent">Отметить отправленным</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="card client-form-card" id="clientFormCard" hidden>
+          <div class="card-head"><div><div class="card-title" id="clientFormTitle">Новый клиент</div><div class="card-sub">Только необходимые поля</div></div><button class="icon-btn" type="button" id="clientFormClose" aria-label="Закрыть">×</button></div>
+          <form id="clientForm" class="client-form">
+            <div class="field"><label for="clientName">Имя</label><input id="clientName" name="name" required maxlength="120" placeholder="Анна Петрова"></div>
+            <div class="field"><label for="clientContact">Телефон, @Telegram или e-mail</label><input id="clientContact" name="contact" maxlength="160" placeholder="+7 912 000-11-22"></div>
+            <div class="field"><label for="clientChannel">Канал</label><select id="clientChannel" name="channel"><option value="whatsapp">WhatsApp</option><option value="telegram">Telegram</option><option value="sms">SMS</option><option value="email">E-mail</option><option value="phone">Телефон</option><option value="other">Другой</option></select></div>
+            <div class="field"><label for="clientVisitAt">Дата визита</label><input id="clientVisitAt" name="visitAt" type="date"></div>
+            <div class="field"><label for="clientService">Услуга или товар</label><input id="clientService" name="service" maxlength="180" placeholder="Что купили или за чем пришли"></div>
+            <label class="check-row"><input id="clientConsent" name="consent" type="checkbox"><span>Клиент согласен на обработку данных и приглашение в мессенджере</span></label>
+            <div class="client-actions-row"><button class="btn btn--small" type="submit" id="clientFormSave">Сохранить</button><button class="btn btn--ghost btn--small" type="button" id="clientFormCancel">Отмена</button><span class="field-hint" id="clientFormStatus"></span></div>
+          </form>
+        </div>
+
+        <input id="clientFile" type="file" accept=".xlsx,.csv,.json" hidden>
+      </section>
+
+      <section class="view" id="view-reviews" aria-labelledby="revTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="revTitle">Отзывы</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Сервис собирает ответ из отзыва, читает его и отправляет в Яндекс аккаунтом представителя. Кнопка «Нужно согласование» — добровольный режим.</span></p>
+            <p id="revSummary">нет данных</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--ghost btn--small" type="button" data-view="settings" data-focus="voiceTone">Настроить правила</button>
+            <button class="btn btn--small" type="button" id="reviewsRefresh"><svg width="14" height="14" aria-hidden="true"><use href="#i-refresh"/></svg> Обновить</button>
+          </div>
+        </div>
+
+        <div class="filters" role="group" aria-label="Фильтр отзывов">
+          <button class="filter" type="button" aria-pressed="true" data-filter="all">Все <b>0</b></button>
+          <button class="filter" type="button" aria-pressed="false" data-filter="new">Без ответа <b>0</b></button>
+          <button class="filter" type="button" aria-pressed="false" data-filter="neg">Негатив <b>0</b></button>
+          <button class="filter" type="button" aria-pressed="false" data-filter="done">Отвечены <b>0</b></button>
+        </div>
+
+        <div class="reviews-layout">
+          <div class="review-list" id="reviewList" aria-label="Список отзывов">
+            <div class="review-list-head"><span>Все отзывы</span><span>сначала новые</span></div>
+            <div class="empty-state" id="reviewEmpty"><strong>Отзывов пока нет</strong><p>Публичная страница не отдала тексты отзывов.</p></div>
+            <div class="empty-state" id="reviewSearchEmpty" hidden>
+              <span class="empty-ico">⌕</span>
+              <strong>Ничего не найдено</strong>
+              <p>Поиск идёт по текстам отзывов. Попробуйте другой запрос или сбросьте фильтр.</p>
+            </div>
+          </div>
+
+          <div class="review-detail" id="reviewDetail">
+            <div class="review-detail-head">
+              <span class="avatar avatar--b" id="rdAvatar" aria-hidden="true">М</span>
+              <div class="rdh-meta">
+                <strong id="rdName">Нет отзыва</strong>
+                <span id="rdMeta">Выберите отзыв слева</span>
+                <span class="src"><span class="pin" aria-hidden="true"></span> Яндекс.Карты</span>
+              </div>
+              <button class="icon-btn" type="button" id="reviewActions" aria-label="Жалоба на выбранный отзыв">⋯</button>
+            </div>
+            <div class="review-body" id="rdBody"></div>
+
+            <div class="appeal-offer" id="appealOffer" hidden>
+              <div class="appeal-offer-copy">
+                <span class="appeal-offer-kicker">Жалоба на отзыв</span>
+                <strong>Проверим, есть ли нарушение правил</strong>
+                <p>Плохая оценка — не основание для удаления. Жалоба сработает только на нарушение правил, а решение и срок остаются за поддержкой Яндекса.</p>
+              </div>
+              <button class="btn btn--small" type="button" id="appealOpen">Проверить отзыв</button>
+            </div>
+
+            <div class="appeal-panel" id="appealPanel" hidden>
+              <div class="appeal-panel-head">
+                <div><span class="appeal-offer-kicker">Яндекс.Бизнес · жалоба на отзыв</span><strong>Только нарушение правил, а не спор с оценкой</strong></div>
+                <button class="icon-btn" type="button" id="appealClose" aria-label="Закрыть обращение">×</button>
+              </div>
+
+              <div class="appeal-rules-note">
+                <div>
+                  <span class="appeal-rules-kicker">Как это работает</span>
+                  <ul class="appeal-rules-list">
+                    <li>Жалоба подаётся <b>только текстом</b>: скриншоты, чеки и переписки поддержка не рассматривает.</li>
+                    <li>Жалоба остаётся в кабинете и в Яндекс не отправляется.</li>
+                    <li>Если нарушения нет, отзыв останется. Тогда работает публичный ответ, а не жалоба.</li>
+                  </ul>
+                </div>
+                <div class="appeal-rules-links">
+                  <a class="appeal-rules-link" href="https://yandex.ru/support/reviews/ru/rules" target="_blank" rel="noopener">Правила публикации <svg width="12" height="12" aria-hidden="true"><use href="#i-external"/></svg></a>
+                  <a class="appeal-rules-link" href="https://yandex.ru/support/business-priority/ru/reviews/complain" target="_blank" rel="noopener">Как пожаловаться <svg width="12" height="12" aria-hidden="true"><use href="#i-external"/></svg></a>
+                </div>
+              </div>
+
+              <div class="appeal-fields">
+                <div class="field">
+                  <label for="appealReason">Что именно нарушает отзыв</label>
+                  <select id="appealReason">
+                    <option value="">Выберите нарушение…</option>
+                    <option value="other_org" data-chance="high" data-hint="В тексте прямо видно, что автор описывает другую организацию, адрес или услугу.">Отзыв о другой организации</option>
+                    <option value="other_branch" data-chance="high" data-hint="Автор пишет о другом филиале или обо всей сети, а не об этой точке.">Опыт другого филиала или всей сети</option>
+                    <option value="personal_data" data-chance="high" data-hint="В отзыве есть телефон, адрес, ссылка на соцсеть, документ или сведения о здоровье.">Персональные данные</option>
+                    <option value="employee_experience" data-chance="high" data-hint="Автор описывает работу в компании, а не посещение её как клиента.">Опыт работы, а не визит клиента</option>
+                    <option value="secondhand" data-chance="high" data-hint="Автор пересказывает чужой опыт: «подруга сказала», «жена ходила».">Отзыв с чужих слов</option>
+                    <option value="spam" data-chance="medium" data-hint="В тексте есть реклама, ссылка, промокод или призыв уйти к конкуренту.">Реклама, спам или ссылки</option>
+                    <option value="adult" data-chance="high" data-hint="В отзыве есть эротика, порнография или описание сцен курения.">Контент для взрослых</option>
+                    <option value="fake" data-chance="medium" data-hint="Автор не взаимодействовал с организацией. Поддержка не проверяет чеки — нужна недостоверность, видимая из текста или ситуации.">Недостоверный или накрученный отзыв</option>
+                    <option value="threats" data-chance="high" data-hint="В отзыве есть угрозы, призывы к расправе или дискриминация.">Угрозы, дискриминация, жестокость</option>
+                    <option value="duplicate" data-chance="high" data-hint="Такой же текст опубликован в другой карточке или филиале сети.">Один отзыв на несколько филиалов</option>
+                  </select>
+                  <p class="field-hint" id="appealReasonHint">Сначала выберите нарушение — от него зависит структура текста.</p>
+                </div>
+                <div class="field">
+                  <label for="appealSigner">Кто подписывает <span class="muted">— представитель организации</span></label>
+                  <input id="appealSigner" type="text" maxlength="120" placeholder="Имя и должность">
+                  <p class="field-hint">Укажите имя и должность. Так обращение выглядит от организации.</p>
+                </div>
+                <div class="field field--wide">
+                  <label for="appealEvidence">Цитата из отзыва, которая нарушает правило <span class="muted">— если есть</span></label>
+                  <textarea id="appealEvidence" rows="3" maxlength="900" placeholder="Скопируйте точную фразу из отзыва. Например: «Подруга сказала, что здесь обвешивают»."></textarea>
+                  <p class="field-hint">Не прикладывайте скриншоты и чеки — их не рассматривают. Достаточно точной цитаты и номера отзыва в карточке.</p>
+                </div>
+              </div>
+
+              <div class="appeal-actions">
+                <button class="btn btn--small" type="button" id="appealGenerate"><svg width="13" height="13" aria-hidden="true"><use href="#i-spark"/></svg> Сгенерировать жалобу</button>
+                <span class="field-hint" id="appealStatus">Выберите нарушение — Локус проверит формулировку.</span>
+              </div>
+
+              <div class="appeal-stop">
+                <div>
+                  <strong>Просто не нравится оценка?</strong>
+                  <p>Субъективное мнение не нарушает правила, и жалоба его не уберёт. Лучше ответить публично: ответ увидят все, кто читает отзыв.</p>
+                </div>
+                <button class="btn btn--ghost btn--small" type="button" id="appealGoReply">Перейти к ответу</button>
+              </div>
+
+              <label class="sr-only" for="appealText">Текст жалобы</label>
+              <textarea id="appealText" rows="10" maxlength="1800" placeholder="Здесь появится текст жалобы для Яндекс.Бизнеса."></textarea>
+              <div class="appeal-foot">
+                <span class="chip" id="appealChance">основание не выбрано</span>
+                <span class="small" id="appealCount">0 / 1800 · от 300 знаков</span>
+                <span class="appeal-foot-note">Удаление не гарантировано</span>
+                <span class="spacer"></span>
+                <button class="btn btn--small" type="button" id="appealSubmit" disabled><svg width="13" height="13" aria-hidden="true"><use href="#i-check"/></svg> Поставить в очередь</button>
+              </div>
+            </div>
+
+            <div class="reply-panel">
+              <div class="reply-panel-head">
+                <span class="reply-dot" aria-hidden="true"></span>
+                <span>Ответ Локуса</span>
+                <span class="spacer"></span>
+                <span class="chip">2 абзаца</span>
+                <span class="chip">ключи в тексте</span>
+                <span class="chip">без обещаний</span>
+              </div>
+              <div class="reply-setup">
+                <label class="sr-only" for="replyKeywords">Ключевые слова для ответа</label>
+                <input id="replyKeywords" type="text" maxlength="220" placeholder="Ключевые слова: услуги, ниша, город — можно оставить пустым">
+                <button class="btn btn--small" type="button" id="generateReply"><svg width="13" height="13" aria-hidden="true"><use href="#i-spark"/></svg> Сгенерировать</button>
+              </div>
+              <label class="sr-only" for="replyText">Текст ответа</label>
+              <textarea id="replyText" rows="14" placeholder="Сначала благодарность. Если в отзыве есть имя мастера, оно попадёт сюда. Дальше услуги живым текстом, без города и без прайса. Перед «С уважением» — пустая строка. По умолчанию текст отправляет аккаунт представителя."></textarea>
+              <div class="reply-panel-foot">
+                <span class="chip">благодарность, затем ключи и подпись</span>
+                <span class="spacer"></span>
+                <span class="small" id="replyCount">0 / 1000</span>
+                <button class="btn btn--small" type="button" id="publishReply"><svg width="13" height="13" aria-hidden="true"><use href="#i-check"/></svg> Оставить в кабинете</button>
+              </div>
+            </div>
+            <p class="small" style="margin-top:10px">По умолчанию сервис читает ответ и отправляет его в Яндекс аккаунтом представителя. Кнопка «Нужно согласование» — добровольный режим.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ STORIES ============ -->
+      <section class="view" id="view-stories" aria-labelledby="stTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="stTitle">Сторис</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Выберите кадр. Сервис отправляет сторис аккаунтом представителя. Очередь одобрения в кабинете не шаг клиента.</span></p>
+            <p id="storyQuota" class="small"></p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--ghost btn--small" type="button" id="storyHistoryBtn" aria-expanded="false" aria-controls="storyHistory">История</button>
+          </div>
+        </div>
+
+        <div class="card story-stage">
+          <div class="card-head">
+            <div><div class="card-title">Серия</div><div class="card-sub" id="storySub">Одни темы, три варианта света. Текст сидит в кадре.</div></div>
+            <span class="chip">вертикальный кадр</span>
+          </div>
+          <div class="story-grid" id="storyGrid"></div>
+          <input id="storyFile" type="file" accept="image/*" hidden>
+          <input id="frameFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif" hidden>
+          <p class="field-hint" id="storyStatus">Выберите кадр. В Карты он сам не уйдёт.</p>
+          <p class="field-hint" id="storyBooking">Куда ведёт кнопка записи? Ссылку не придумываем.</p>
+          <div class="story-foot">
+            <button class="btn btn--small" type="button" id="publishStory"><svg width="13" height="13" aria-hidden="true"><use href="#i-check"/></svg> Оставить в кабинете</button>
+            <button class="btn btn--ghost btn--small" type="button" id="downloadStory"><svg width="13" height="13" aria-hidden="true"><use href="#i-download"/></svg> Скачать PNG</button>
+            <span class="spacer"></span>
+            <span class="small" id="storyCounter">лимит по тарифу</span>
+          </div>
+          <input id="storyLink" type="hidden" value="">
+        </div>
+
+        <article class="card story-history" id="storyHistory" hidden>
+          <div class="card-head">
+            <div><div class="card-title">История публикаций</div><div class="card-sub" id="storyHistorySub">Опубликованные сторис этой карточки</div></div>
+            <button class="btn btn--ghost btn--small" type="button" id="storyHistoryClose" aria-label="Закрыть историю">Скрыть</button>
+          </div>
+          <div id="storyHistoryList" class="story-history-list"><p class="field-hint">Загружаем историю…</p></div>
+        </article>
+      </section>
+
+      <!-- ============ SEMANTICS ============ -->
+      <section class="view" id="view-semantics" aria-labelledby="semTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="semTitle">Запросы</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Фразы, по которым вас ищут. Их можно взять в ответ или новость.</span></p>
+            <p id="semSub">Ядро запросов по вашей карточке</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--ghost btn--small" type="button" id="exportCsv"><svg width="13" height="13" aria-hidden="true"><use href="#i-download"/></svg> Экспорт CSV</button>
+            <button class="btn btn--ghost btn--small" type="button" id="wordstatPhrases"><svg width="13" height="13" aria-hidden="true"><use href="#i-download"/></svg> Фразы для Вордстата</button>
+            <button class="btn btn--ghost btn--small" type="button" id="wordstatUploadBtn">Загрузить выгрузку</button>
+            <input id="wordstatFile" type="file" accept=".csv,.txt,.tsv,.xls,.xlsx,.html,text/csv,text/plain" hidden>
+            <button class="btn btn--small" type="button" id="rebuildCore"><svg width="13" height="13" aria-hidden="true"><use href="#i-refresh"/></svg> Пересобрать ядро</button>
+          </div>
+        </div>
+        <p class="field-hint" id="wordstatHint">Скачайте фразы, проверьте их в Вордстате по городу точки и загрузите отчёт сюда. Показы пишутся только из файла, чужие строки в ядро не попадают.</p>
+
+        <div class="sem-summary" id="semSummary"></div>
+
+        <section class="sem-geo card" id="semGeoCard" aria-labelledby="semGeoTitle">
+          <div class="sem-geo-head">
+            <div>
+              <div class="card-title" id="semGeoTitle">Карта адреса</div>
+              <div class="card-sub" id="semGeoSub">Точка организации и объекты рядом</div>
+            </div>
+            <div class="sem-layers" id="semLayers" role="group" aria-label="Слой интентов">
+              <button type="button" data-sem-layer="all" aria-pressed="true">Все</button>
+              <button type="button" data-sem-layer="гео" aria-pressed="false">Гео</button>
+              <button type="button" data-sem-layer="купить" aria-pressed="false">Купить</button>
+              <button type="button" data-sem-layer="инфо" aria-pressed="false">Инфо</button>
+              <button type="button" data-sem-layer="бренд" aria-pressed="false">Бренд</button>
+            </div>
+          </div>
+          <div class="sem-geo-grid">
+            <div class="sem-map-wrap">
+              <div id="semMap" role="region" aria-label="Карта адреса организации"></div>
+              <p class="sem-map-caption" id="semMapCaption"></p>
+            </div>
+            <aside class="sem-geo-side">
+              <div class="sem-geo-summary" id="semGeoSummary"></div>
+              <div class="sem-districts" id="semDistricts"></div>
+              <div class="sem-geo-list" id="semGeoList"></div>
+            </aside>
+          </div>
+          <div class="sem-nearby" id="semNearby" hidden>
+            <div class="sem-nearby-head">
+              <div><div class="card-title">Ближайшие конкуренты</div><div class="card-sub" id="semNearbySub">По расстоянию от вашего адреса</div></div>
+              <span class="chip" id="semNearbyChip">—</span>
+            </div>
+            <div class="sem-nearby-list" id="semNearbyList"></div>
+          </div>
+        </section>
+
+        <div class="sem-layout">
+          <article class="card">
+            <div class="card-head">
+              <div><div class="card-title">Ядро и карта действий</div><div class="card-sub" id="semSelected">Выбрано 4 из 10 приоритетных</div><p class="field-hint" id="semPickNote">Галочка берёт фразу в работу. Кнопка в столбце «Действие» открывает блок, куда её ставить.</p></div>
+              <div class="seg-mini" role="group" aria-label="Сортировка ядра">
+                <button type="button" aria-pressed="true" data-sem-sort="frequency">По частоте</button>
+                <button type="button" aria-pressed="false" data-sem-sort="intent" title="Сначала гео, затем купить, инфо и бренд">По интенту</button>
+              </div>
+            </div>
+            <div class="sem-table-wrap">
+              <table class="sem-table2">
+                <thead>
+                  <tr>
+                    <th scope="col"><span class="sr-only">Выбор</span></th>
+                    <th scope="col">Запрос</th>
+                    <th scope="col" style="text-align:right">Спрос</th>
+                    <th scope="col">Кластер</th>
+                    <th scope="col">Интент</th>
+                    <th scope="col">Действие</th>
+                  </tr>
+                </thead>
+                <tbody id="semBody">
+                  <tr><td colspan="6">нет данных, пока нет Wordstat</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="empty-state" id="semFilterEmpty" hidden>
+              <span class="empty-ico">⌕</span>
+              <strong>В этом пересечении нет запросов</strong>
+              <p>Сбросьте слой или кластер — ядро покажет фразы из другого среза.</p>
+              <button class="mini-btn" type="button" id="semResetFilter">Сбросить фильтры</button>
+            </div>
+          </article>
+
+          <div>
+            <article class="card" style="margin-bottom:12px">
+              <div class="card-head"><div class="card-title">Что сделать первым</div><span class="chip chip--accent">3 победы</span></div>
+              <div id="semInsights">
+              <div class="insight">
+                <strong><span>1</span> Нет данных</strong>
+                <p>Частоты появятся, когда есть ключ Wordstat или файл частот.</p>
+              </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-head"><div class="card-title">Минус-слова</div></div>
+              <label class="sr-only" for="minusWords">Стоп-слова</label>
+              <textarea id="minusWords" rows="3">бесплатно, вакансия, аренда, оптом, доставка еды</textarea>
+              <p class="field-hint">Эти слова не берём в ядро и в тексты. Список правится здесь и в голосе бренда.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ AUDIT ============ -->
+      <section class="view" id="view-audit" aria-labelledby="auditTitle" hidden>
+        <div class="page-head audit-page-head">
+          <div>
+            <span class="audit-kicker">Отчёт для руководителя</span>
+            <h2 id="auditTitle">Проверка</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Что в карточке мешает звонку. Исправьте верхний пункт.</span></p>
+            <p>Вердикт, три главные потери и план на неделю. Детали — по клику.</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--ghost btn--small" type="button" id="refreshAudit"><svg width="13" height="13" aria-hidden="true"><use href="#i-refresh"/></svg> Пересчитать</button>
+            <button class="btn btn--ghost btn--small" type="button" id="auditPrint"><svg width="13" height="13" aria-hidden="true"><use href="#i-download"/></svg> Печать / сохранить PDF</button>
+            <button class="btn btn--small" type="button" id="auditCloseGaps"><svg width="13" height="13" aria-hidden="true"><use href="#i-spark"/></svg> Закрыть пробелы</button>
+          </div>
+        </div>
+
+        <div class="audit-context audit-context--compact" id="auditContext" hidden>
+          <div class="audit-context-main">
+            <span class="eyebrow" id="auditContextEyebrow">Проверка по данным кабинета</span>
+            <h3 id="auditCardName">Карточка</h3>
+            <p id="auditCardMeta"></p>
+            <p class="audit-context-note" id="auditImportNote"></p>
+          </div>
+          <div class="audit-context-side">
+            <span class="chip" id="auditSourceChip">данные кабинета</span>
+          </div>
+        </div>
+
+        <section class="audit-hero" id="auditHero" aria-labelledby="auditVerdict">
+          <div class="audit-hero-main">
+            <span class="audit-eyebrow">Вердикт · <span id="auditDate">сегодня</span></span>
+            <div class="audit-scoreline">
+              <div class="cab-ring cab-ring--xl" id="cabScoreRing" style="--score:0" role="img" aria-label="Оценка карточки">
+                <span><b id="cabScore">—</b><small>/100</small></span>
+              </div>
+              <div class="audit-verdict-copy">
+                <h2 id="auditVerdict">Считаем карточку…</h2>
+                <p id="cabNote" class="audit-note">Загружаем данные и собираем вердикт.</p>
+                <div class="audit-chips" id="auditChips"></div>
+              </div>
+            </div>
+          </div>
+          <div class="audit-hero-side">
+            <span class="audit-band" id="auditBand">—</span>
+            <p class="audit-updated" id="auditUpdated">считаем карточку…</p>
+            <button class="btn btn--light btn--small" type="button" data-view="reviews">Показать отзывы</button>
+          </div>
+        </section>
+
+        <div class="audit-topgrid">
+          <section class="audit-losses" aria-labelledby="auditLossTitle">
+            <div class="audit-section-head">
+              <div><h3 id="auditLossTitle">3 главные потери</h3><p>Что сильнее всего мешает выбрать вас</p></div>
+              <span class="chip" id="auditLossCount">—</span>
+            </div>
+            <div class="audit-loss-cards" id="auditLossCards">
+              <div class="audit-loss-skeleton"></div>
+              <div class="audit-loss-skeleton"></div>
+              <div class="audit-loss-skeleton"></div>
+            </div>
+          </section>
+
+          <aside class="audit-plan" aria-labelledby="auditPlanTitle">
+            <div class="audit-section-head">
+              <div><h3 id="auditPlanTitle">План</h3><p>Что сделать первым</p></div>
+              <span class="audit-plan-badge">неделя</span>
+            </div>
+            <ol class="audit-plan-list" id="auditPlan"><li class="audit-plan-empty">Собираем план…</li></ol>
+          </aside>
+        </div>
+
+        <section class="audit-competitors card" id="auditCompetitors" aria-labelledby="auditCompetitorsTitle" hidden>
+          <div class="audit-section-head">
+            <div><h3 id="auditCompetitorsTitle">Конкуренты</h3><p>Кто рядом в вашей нише и как вы выглядите на их фоне</p></div>
+            <span class="chip" id="auditCompetitorsChip">—</span>
+          </div>
+          <div class="audit-competitor-insights" id="auditCompetitorInsights"></div>
+          <div class="audit-competitor-list" id="auditCompetitorList"></div>
+        </section>
+
+        <section class="audit-findings card" id="auditAlice" aria-labelledby="auditAliceTitle">
+          <div class="audit-section-head">
+            <div><h3 id="auditAliceTitle">Что можно прочитать в Алисе</h3><p id="auditAliceNote">Факты карточки. Алиса называет организацию, только если Поиск и Карты уже её показывают.</p></div>
+            <span class="chip" id="auditAliceCount">—</span>
+          </div>
+          <ul class="alice-list" id="auditAliceList"></ul>
+        </section>
+
+        <section class="audit-findings card" aria-labelledby="auditFindingsTitle">
+          <div class="audit-section-head">
+            <div><h3 id="auditFindingsTitle">Все находки</h3><p>Нажмите на строку, чтобы увидеть факт и действие</p></div>
+            <div class="audit-legend"><span class="audit-dot audit-dot--high"></span>критично <span class="audit-dot audit-dot--medium"></span>средне <span class="audit-dot audit-dot--low"></span>быстро</div>
+          </div>
+          <div class="audit-findings-list" id="cabIssues"><div class="audit-loading">Загружаем находки…</div></div>
+        </section>
+
+        <details class="audit-details card" id="auditDetails">
+          <summary>
+            <span><strong>Что проверяли и что осталось за кадром</strong><small>5 блоков · публичные данные и кабинет</small></span>
+            <span class="audit-details-arrow" aria-hidden="true">▾</span>
+          </summary>
+          <div class="audit-details-body">
+            <div class="audit-coverage" id="cabBars"></div>
+            <div class="audit-metrics-wrap">
+              <div class="audit-section-head"><div><h3>Метрики карточки</h3><p id="auditMetricsSub">7 показателей</p></div></div>
+              <div class="cab-metrics" id="cabMetrics"></div>
+            </div>
+            <div class="audit-signals" id="auditSignals" hidden></div>
+            <div class="audit-gallery" id="auditGallery" hidden>
+              <div class="audit-gallery-head">
+                <div><div class="card-title">Фото из карточки</div><div class="card-sub" id="auditGalleryCount"></div></div>
+                <span class="chip">источник — Яндекс.Карты</span>
+              </div>
+              <div class="audit-gallery-grid" id="auditGalleryGrid"></div>
+            </div>
+          </div>
+        </details>
+
+        <article class="audit-cta" id="auditCta" hidden>
+          <div class="audit-cta-copy">
+            <span class="eyebrow" id="auditCtaEyebrow">Проверка готова · следующий шаг</span>
+            <h3 id="auditCtaTitle">Исправить карточку</h3>
+            <p id="auditCtaText">«Исправить» открывает первый пробел. Счёт, если тариф ещё не оплачен, выставляется отдельно.</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn" type="button" id="auditFixBtn"><svg width="14" height="14" aria-hidden="true"><use href="#i-spark"/></svg> Исправить</button>
+            <button class="btn btn--ghost" type="button" id="auditPayBtn" hidden>Оформить подписку</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ STOREFRONT ============ -->
+      <section class="view" id="view-storefront" aria-labelledby="storefrontTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="storefrontTitle">Витрина</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Как позиция выглядит для гостя. Берётся из прайса.</span></p>
+            <p id="storefrontLead">Прайс — где цена, описание и каталожный кадр. Витрина рисует свой кадр гостя: он может отличаться от фото прайса.</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--ghost btn--small" type="button" id="storefrontRefresh"><svg width="13" height="13" aria-hidden="true"><use href="#i-refresh"/></svg> Обновить</button>
+            <button class="btn btn--small" type="button" data-view="prices"><svg width="13" height="13" aria-hidden="true"><use href="#i-plus"/></svg> Открыть прайс</button>
+          </div>
+        </div>
+        <div class="storefront-summary" id="storefrontSummary" aria-live="polite">Загружаем позиции…</div>
+        <p class="field-hint" id="storefrontBooking">Куда ведёт кнопка витрины? Ссылку не придумываем.</p>
+        <div id="storefrontLook"></div>
+        <div class="product-grid" id="storefrontGrid" aria-label="Позиции витрины"></div>
+        <div class="empty-state" id="storefrontEmpty" hidden>
+          <span class="empty-ico">□</span>
+          <strong>Витрина пока пустая</strong>
+          <p>Добавьте 3–5 позиций в прайсе — они появятся здесь как карточки для карточки и сторис.</p>
+          <button class="btn btn--small" type="button" data-view="prices" style="margin-top:12px">Перейти в прайс</button>
+        </div>
+        <p class="field-hint" id="storefrontStatus">Описание — до 3 000 знаков, факты из прайса. Публикация в Карты идёт через очередь.</p>
+      </section>
+
+      <!-- ============ PRICES ============ -->
+      <section class="view" id="view-prices" aria-labelledby="pricesTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="pricesTitle">Прайс</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Позиции и цены. Файл Excel загружается сюда же.</span></p>
+            <p id="pricesLead">Каждая позиция — карточка витрины: фото, название блюда или услуги, цена и состав. В комментарии перечислите, что входит. «От» ставьте только если так написано в вашем прайсе.</p>
+          </div>
+          <div class="page-actions price-actions">
+            <input id="priceImportFile" type="file" accept=".xlsx,.csv" hidden>
+            <div class="price-actions-main">
+              <button class="btn btn--small" type="button" id="priceAdd"><svg width="13" height="13" aria-hidden="true"><use href="#i-plus"/></svg> Добавить позицию</button>
+              <button class="btn btn--ghost btn--small" type="button" id="priceDownload"><svg width="13" height="13" aria-hidden="true"><use href="#i-download"/></svg> Скачать прайс</button>
+            </div>
+            <span class="price-actions-sep" aria-hidden="true"></span>
+            <div class="price-actions-data">
+              <span class="price-actions-label">Excel / CSV</span>
+              <button class="btn btn--ghost btn--small" type="button" id="priceImport" title="Импорт Excel или CSV" aria-label="Импорт Excel или CSV"><svg width="13" height="13" aria-hidden="true"><use href="#i-download"/></svg> Импорт Excel</button>
+              <button class="btn btn--ghost btn--small" type="button" id="priceTemplate" title="Скачать шаблон CSV" aria-label="Скачать шаблон CSV">Шаблон CSV</button>
+              <button class="btn btn--ghost btn--small" type="button" id="priceExport" title="Скачать прайс в Excel" aria-label="Скачать прайс в Excel">Скачать Excel</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-layout">
+          <article class="card price-editor">
+            <div class="card-head">
+              <div><div class="card-title">Позиции</div><div class="card-sub" id="priceStats">Загружаем…</div></div>
+              <span class="field-hint">Сохраняется по потере фокуса</span>
+            </div>
+            <div class="price-table-wrap">
+              <table class="price-table" aria-label="Редактор прайса">
+                <thead><tr><th>Название</th><th>Категория</th><th>Цена</th><th>Ед.</th><th>«От»</th><th>Комментарий</th><th></th></tr></thead>
+                <tbody id="priceRows"></tbody>
+              </table>
+            </div>
+            <p class="field-hint" id="priceBooking">Ссылка прайса: куда ведёт кнопка? Ссылку не придумываем.</p>
+            <p class="field-hint" id="priceStatus">Микрокомментарий — до 120 знаков, один факт и одно условие. Без обещаний и контактов.</p>
+            <p class="field-hint" id="priceImportStatus">Excel или CSV: колонки «Название», «Категория», «Цена», «Ед.», «Комментарий». Первая строка — заголовки.</p>
+            <div class="price-note">
+              <strong>Про «от»</strong>
+              <p>В Картах Яндекс принимает только точную цену. «От» сохраняем для сайта и презентации; при публикации в Карты Локус предупредит и попросит точную сумму.</p>
+            </div>
+          </article>
+
+          <aside class="card price-preview-card">
+            <div class="card-head">
+              <div><div class="card-title" id="pricePreviewTitle">Превью</div><div class="card-sub">1200 × 1600</div></div>
+              <button class="card-link" type="button" data-view="storefront">Витрина <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+            <div id="priceLook"></div>
+            <img id="pricePreview" class="price-preview" alt="Предпросмотр прайс-листа" src="assets/favicon.svg" loading="lazy" decoding="async" hidden>
+            <div class="empty-state" id="pricePreviewEmpty">
+              <span class="empty-ico">₽</span>
+              <strong id="priceEmptyTitle">Прайс соберётся здесь</strong>
+              <p id="priceEmptyText">Добавьте 3–5 позиций — получится меню для сторис, сайта и печати.</p>
+            </div>
+            <p class="field-hint">В Картах: название, категория, точная цена, единица и короткое описание. Alt и ключевые слова — для сайта и выгрузки.</p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============ IMAGES ============ -->
+      <section class="view" id="view-images" aria-labelledby="imagesTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="imagesTitle">Фото</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Свои кадры карточки. На вход — фотография двери, не рисунок.</span></p>
+            <p>Без людей, без чужой еды и без случайных фото из галереи.</p>
+            <p class="field-hint" style="max-width:640px">Команду, врачей и результаты «до/после» не генерируем: это реальные люди и медицинские доказательства. Загружайте такие фото только с письменным согласием.</p>
+          </div>
+          <div class="page-actions">
+            <span class="quota-chip" id="imageQuota">Изображения: —</span>
+            <button class="btn btn--small" type="button" id="generateImages"><svg width="14" height="14" aria-hidden="true"><use href="#i-spark"/></svg> Сгенерировать</button>
+          </div>
+        </div>
+
+        <div class="grid grid--2e studio-grid">
+          <article class="card studio-controls">
+            <div class="card-head"><div class="card-title">Что нужно снять</div><div class="card-sub">кадр соберём из описания вашей точки</div></div>
+            <div class="media-form">
+              <div class="field">
+                <label for="imageProvider">Провайдер</label>
+                <select id="imageProvider"></select>
+                <p class="field-hint" id="imageProviderNote">Проверяем подключение…</p>
+              </div>
+              <div class="field">
+                <label for="imageScene">Сцена</label>
+                <select id="imageScene">
+                  <option value="hero">Главный кадр — обложка</option>
+                  <option value="interior">Интерьер / пространство</option>
+                  <option value="detail">Деталь / предмет</option>
+                  <option value="process">Процесс / оборудование</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="imageFormat">Формат</label>
+                <select id="imageFormat">
+                  <option value="9:16">Сторис 9:16</option>
+                  <option value="4:3">Пост 4:3</option>
+                  <option value="1:1">Квадрат 1:1</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="imageExtra">Уточнение</label>
+                <textarea id="imageExtra" rows="2" maxlength="300" placeholder="Например: светлый кабинет, шалфей и дуб, мягкий дневной свет"></textarea>
+              </div>
+              <div class="field">
+                <label for="imageRefs">Референсы, если есть</label>
+                <input id="imageRefs" type="url" inputmode="url" placeholder="https://… (логотип, интерьер, продукт)">
+                <p class="field-hint">Только свои файлы или письменное разрешение. Ссылка описывает кадр, сам файл по ссылке пока не подставляется.</p>
+              </div>
+            </div>
+            <button class="btn btn--small btn--full" type="button" id="generateImagesBottom"><svg width="13" height="13" aria-hidden="true"><use href="#i-spark"/></svg> Сгенерировать 3 варианта</button>
+            <p class="field-hint" id="imageStatus">Три новых кадра одной сцены. Готовый мир вместо фото не подставляем. В Карты кадр сам не уходит.</p>
+            <div class="row-actions">
+              <button class="btn btn--ghost btn--small" type="button" id="previewImagePrompt">Показать текст для кадра</button>
+              <button class="btn btn--ghost btn--small" type="button" id="copyImagePrompt" hidden>Скопировать</button>
+            </div>
+            <pre class="prompt-preview" id="imagePromptPreview" hidden></pre>
+          </article>
+
+          <article class="card studio-gallery-card">
+            <div class="card-head"><div class="card-title">Галерея</div><div class="card-sub" id="imageCount">0 изображений</div></div>
+            <div class="row-actions" style="margin-bottom:10px">
+              <button class="btn btn--ghost btn--small" type="button" id="uploadImage">Загрузить файл</button>
+              <input id="imageUpload" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif" hidden>
+            </div>
+            <div id="publicCardPhotos" class="image-gallery" hidden></div>
+            <p class="field-hint" id="publicCardPhotosNote" hidden>Кадры публичной страницы, не загрузка в Яндекс.</p>
+            <div class="image-gallery" id="imageGallery">
+              <div class="empty-state">
+                <span class="empty-ico">✦</span>
+                <strong>Пока пусто</strong>
+                <p>Сгенерируйте обложку, интерьер или деталь. Кадры появятся здесь с alt и ключевыми словами.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <article class="card" id="imageMetaCard" hidden>
+          <div class="card-head"><div class="card-title">Паспорт изображения</div><div class="card-sub">для сайта, сторис и выгрузки</div></div>
+          <div class="grid grid--2" style="gap:18px">
+            <div class="field">
+              <label for="imageAlt">Alt-текст <span class="field-count">≤120</span></label>
+              <input id="imageAlt" type="text" maxlength="120" placeholder="Светлый стоматологический кабинет с креслом">
+              <p class="field-hint">Описывает кадр, а не перечисляет ключи. В фото Карт отдельного alt нет — это метаданные сайта и выгрузки.</p>
+            </div>
+            <div class="field">
+              <label for="imageTitle">Title <span class="field-count">≤80</span></label>
+              <input id="imageTitle" type="text" maxlength="80" placeholder="Светлый кабинет стоматологии в Екатеринбурге">
+              <p class="field-hint">Заголовок для сайта и выгрузки; в Картах отдельного title у фото нет.</p>
+            </div>
+            <div class="field">
+              <label for="imageKeywords">Ключевые слова</label>
+              <input id="imageKeywords" type="text" maxlength="240" placeholder="стоматология, кабинет, интерьер">
+              <p class="field-hint">2–4 фразы через запятую. Без «лучший», «гарантия» и обещаний.</p>
+            </div>
+          </div>
+          <div class="row-actions">
+            <button class="btn btn--small" type="button" id="saveImageMeta">Сохранить теги</button>
+            <a class="btn btn--ghost btn--small" href="#" id="downloadImage" download hidden>Скачать оригинал</a>
+            <button class="btn btn--ghost btn--small" type="button" id="useImageStory">В сторис</button>
+            <button class="btn btn--ghost btn--small" type="button" id="copyImageMeta">Скопировать теги</button>
+            <span class="field-hint" id="imageMetaStatus"></span>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============ NEWS ============ -->
+      <section class="view" id="view-news" aria-labelledby="newsTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="newsTitle">Новости</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Нажмите «Собрать новость». Сервис читает текст и отправляет его в Яндекс аккаунтом представителя. Если включена кнопка «Нужно согласование», новость сначала приходит в бот.</span></p>
+          </div>
+          <div class="page-actions">
+            <span class="quota-chip" id="newsQuota">Тексты: —</span>
+            <button class="btn btn--small" type="button" id="newsGenerate"><svg width="14" height="14" aria-hidden="true"><use href="#i-spark"/></svg> Собрать новость</button>
+          </div>
+        </div>
+
+        <div class="news-layout">
+          <article class="card">
+            <div class="card-head"><div class="card-title">Шаблон публикации</div><div class="card-sub">100 SEO-сценариев · выберите под задачу</div></div>
+            <div class="news-template-field">
+              <label class="news-template-label" for="newsTemplate">Сценарий</label>
+              <div class="template-picker" id="newsTemplatePicker">
+                <button class="template-picker-btn" type="button" id="newsTemplateBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="newsTemplatePanel">
+                  <span class="template-picker-copy">
+                    <span class="template-picker-kicker">Выбрать сценарий</span>
+                    <strong id="newsTemplateLabel">Авто: подобрать по теме</strong>
+                  </span>
+                  <span class="template-picker-arrow" aria-hidden="true">⌄</span>
+                </button>
+                <select id="newsTemplate" class="template-native" tabindex="-1" aria-hidden="true"><option value="">Подобрать по теме</option></select>
+                <div class="template-panel" id="newsTemplatePanel" hidden>
+                  <div class="template-search">
+                    <svg width="14" height="14" aria-hidden="true"><use href="#i-search"/></svg>
+                    <input id="newsTemplateSearch" type="search" autocomplete="off" placeholder="Найти сценарий: сезон, команда, гео…">
+                  </div>
+                  <div class="template-list" id="newsTemplateList" role="listbox" aria-label="Сценарии новостей"></div>
+                  <div class="template-empty" id="newsTemplateEmpty" hidden>Ничего не найдено. Попробуйте другой запрос.</div>
+                </div>
+              </div>
+              <label class="news-niche-filter"><input id="newsOnlyNiche" type="checkbox"> Только сценарии для моей ниши <span>по умолчанию все 100 — ищите по сезону, команде или гео</span></label>
+              <p class="field-hint" id="newsTemplateHint">Шаблон задаёт структуру и SEO-абзац; факты подставляются из карточки.</p>
+              <div class="news-template-meta" id="newsTemplateMeta"></div>
+            </div>
+
+            <div class="card-head" style="margin-top:16px"><div class="card-title">Темы месяца из Wordstat</div><div class="card-sub">частотность и сезон</div></div>
+            <div class="topic-list" id="newsTopicList"><p class="field-hint">Загружаем темы…</p></div>
+            <div class="news-weekly">
+              <div>
+                <strong>Рекомендуемый ритм — одна новость в неделю</strong>
+                <p>Лучше публиковать раз в неделю, например в среду: карточка остаётся живой, а вы не тратите время на ежедневный контент. Следующая публикация: <b id="newsNextDate">—</b>.</p>
+              </div>
+              <div class="news-weekly-actions">
+                <button class="btn btn--ghost btn--small" type="button" id="newsReminderBtn">Напомнить в браузере</button>
+                <span class="field-hint" id="newsReminderStatus"></span>
+              </div>
+            </div>
+            <div class="news-custom-topic">
+              <label for="newsCustomTopic">Добавить тему из Wordstat</label>
+              <div class="news-custom-row">
+                <input id="newsCustomTopic" type="text" maxlength="80" placeholder="например: кофейня с собакой">
+                <button class="btn btn--ghost btn--small" type="button" id="newsAddTopic">Добавить</button>
+              </div>
+              <p class="field-hint">Можно взять любую фразу из Wordstat — она появится в списке тем и будет использовать ваши ключевые слова.</p>
+            </div>
+            <div class="news-rule">
+              <strong>Один текст — разные сценарии</strong>
+              <p>1800–2500 знаков, лимит Яндекса — 3000. Структура зависит от шаблона: разбор, маршрут услуги, команда, кейс, сезон, гео, мифы, чек-лист, оффер или сравнение.</p>
+            </div>
+            <div class="field" style="margin-top:16px">
+              <label for="newsKeywordInput">Свои ключевые слова</label>
+              <input id="newsKeywordInput" type="text" maxlength="180" placeholder="например: гигиена полости рта, профилактика">
+              <p class="field-hint">До 3 фраз. Если оставить пусто — возьмём кластер из карточки.</p>
+            </div>
+            <div class="news-rule">
+              <strong>Откуда темы</strong>
+              <p>Сначала — частотные фразы из семантики карточки (Wordstat), затем сезонные темы ниши. Частотность показываем как есть, без выдуманных чисел.</p>
+            </div>
+            <div class="news-rule">
+              <strong>Как в Картах</strong>
+              <p>Текст до 3000 знаков, до 4 изображений. Отдельного заголовка, даты и кнопки CTA в публикации нет — они входят в текст словами.</p>
+            </div>
+          </article>
+
+          <article class="card news-editor">
+            <div class="card-head"><div class="card-title">Черновик</div><div class="card-sub" id="newsStatus">Выберите тему и соберите текст</div></div>
+            <div class="news-owner-note" id="newsOwnerNote" hidden>
+              <strong>Заметка для владельца · не публикуется</strong>
+              <p id="newsOwnerNoteText"></p>
+            </div>
+            <div class="field">
+              <label for="newsHeadline">Заголовок для кабинета <span class="field-count">≤120</span></label>
+              <input id="newsHeadline" type="text" maxlength="120" placeholder="Название публикации для кабинета">
+            </div>
+            <div class="field">
+              <label for="newsBody">Текст публикации <span class="field-count" id="newsBodyCount">0 / 3000</span></label>
+              <textarea id="newsBody" rows="14" maxlength="3000" placeholder="Текст для Яндекс.Карт появится здесь. Около 2000 знаков, можно отредактировать перед публикацией."></textarea>
+              <p class="field-hint">Один текст для Карт: заголовок, дата и кнопка отдельно не публикуются — они входят в текст словами.</p>
+            </div>
+            <div class="grid grid--2" style="gap:16px">
+              <div class="field">
+                <label for="newsKeywords">Ключевые слова</label>
+                <input id="newsKeywords" type="text" maxlength="220" placeholder="стоматология, профилактика, Екатеринбург">
+              </div>
+              <div class="field">
+                <label for="newsImage">Изображение</label>
+                <div class="news-image-row">
+                  <select id="newsImage"><option value="">Без изображения</option></select>
+                  <button class="btn btn--ghost btn--small" type="button" id="newsGenerateImage">Сгенерировать</button>
+                </div>
+                <div class="news-image-preview" id="newsImagePreview" hidden>
+                  <img id="newsImagePreviewImg" alt="Обложка новости" src="assets/favicon.svg" loading="lazy" hidden>
+                  <span class="poster-type" id="newsPosterType"></span>
+                </div>
+                <div class="news-image-choices" id="newsImageChoices" hidden></div>
+                <p class="field-hint" id="newsImageStatus">Можно прикрепить готовый кадр или сгенерировать три обложки и выбрать лучшую.</p>
+              </div>
+            </div>
+            <div class="row-actions">
+              <button class="btn btn--small" type="button" id="newsPublish">Оставить в кабинете</button>
+              <button class="btn btn--ghost btn--small" type="button" id="newsSave">Сохранить черновик</button>
+              <button class="btn btn--ghost btn--small" type="button" id="newsCopy">Скопировать текст</button>
+              <span class="field-hint" id="newsSaveStatus"></span>
+            </div>
+          </article>
+        </div>
+
+      </section>
+
+      <!-- ============ ANALYTICS ============ -->
+      <section class="view" id="view-analytics" aria-labelledby="anTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="anTitle">Результаты</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Выберите период. Здесь действия в Локусе, не показы Яндекса.</span></p>
+            <p id="anPeriod">Действия Локуса · показы и звонки: нет данных</p>
+          </div>
+          <div class="page-actions">
+            <div class="seg-mini an-periods" role="group" aria-label="Период аналитики">
+              <button type="button" data-an-days="7" aria-pressed="false">7 дней</button>
+              <button type="button" data-an-days="30" aria-pressed="true">30 дней</button>
+              <button type="button" data-an-days="90" aria-pressed="false">90 дней</button>
+            </div>
+            <a class="btn btn--ghost btn--small" id="analyticsReport" href="#" target="_blank" rel="noopener">Недельный отчёт</a>
+          </div>
+        </div>
+
+        <div class="empty-state" id="analyticsEmpty" hidden>
+          <strong>Аналитика появится после первых данных</strong>
+          <p>Пока в кабинете нет действий и отзывов. Подключите карточку или начните с проверки — цифры появятся автоматически.</p>
+          <button class="btn btn--small" type="button" data-view="audit">Проверить карточку</button>
+        </div>
+
+        <div class="kpis" id="anKpis" aria-live="polite">
+          <article class="kpi kpi--skeleton"></article><article class="kpi kpi--skeleton"></article><article class="kpi kpi--skeleton"></article><article class="kpi kpi--skeleton"></article>
+        </div>
+
+        <div class="grid grid--2" style="margin-bottom:12px">
+          <article class="card">
+            <div class="card-head"><div><div class="card-title">Активность по дням</div><div class="card-sub" id="anChartSub">действия в кабинете</div></div><span class="chip" id="anChartTotal">—</span></div>
+            <div class="an-chart" id="anChart" role="img" aria-label="Активность по дням"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><div class="card-title">Источники действий</div><div class="card-sub">что вы делали за период</div></div></div>
+            <div id="anSources"><p class="field-hint">Загружаем…</p></div>
+            <p class="an-note">Это не показы и не переходы из Карт: Локус считает только свои действия и публикации.</p>
+          </article>
+        </div>
+
+        <div class="grid grid--2e">
+          <article class="card">
+            <div class="card-head"><div><div class="card-title">Что делали</div><div class="card-sub">журнал последних действий</div></div></div>
+            <div class="an-journal" id="anJournal"><p class="field-hint">Загружаем…</p></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><div class="card-title">Что дальше</div><div class="card-sub">следующий шаг, а не отчёт ради отчёта</div></div></div>
+            <div id="anNext"><p class="field-hint">Собираем рекомендации…</p></div>
+            <div class="an-content" id="anContent"></div>
+          </article>
+        </div>
+        <p class="field-hint an-disclaimer" id="anNote">Данные Locus: действия в кабинете и публикации. Показы, позиции и звонки из Яндекс.Карт сюда не входят.</p>
+      </section>
+
+      <!-- ============ SETTINGS ============ -->
+      <section class="view" id="view-brandbook" aria-labelledby="brandTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="brandTitle">Ваши материалы</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Ваши фото и как звучит карточка.</span></p>
+            <p>Один раз укажите ссылку на облако и тон. Дальше новые тексты опираются на эту организацию.</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--ghost btn--small" type="button" id="brandUploadBtn">Загрузить файл</button>
+            <button class="btn btn--ghost btn--small" type="button" id="brandGenerateBtn"><svg width="13" height="13" aria-hidden="true"><use href="#i-spark"/></svg> Сгенерировать с Локусом</button>
+            <button class="btn btn--small" type="button" id="brandSaveBtn">Сохранить</button>
+          </div>
+        </div>
+
+        <div class="brand-status-bar">
+          <span class="brand-status-dot" id="brandStatusDot"></span>
+          <div><strong id="brandStatusTitle">Материалы не заданы</strong><span id="brandStatusText">Вставьте ссылку на облако или соберите голос по карточке.</span></div>
+          <span class="brand-source" id="brandSource">источник: —</span>
+        </div>
+
+        <div class="brand-layout">
+          <aside class="card brand-upload-card">
+            <div class="field" style="margin-bottom:12px">
+              <label for="brandMaterialsUrl">Ссылка на материалы</label>
+              <input id="brandMaterialsUrl" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://disk.yandex.ru/… или другое облако" maxlength="500">
+              <div class="field-hint">Публичная ссылка Яндекс.Диска. Локус снимет цвета с фото и поставит их в сторис, витрину и прайс.</div>
+            </div>
+            <div class="card-head"><div><div class="card-title">Фото или файл</div><div class="card-sub">jpg, png, webp, pdf, docx, txt, md, json, до 6 МБ</div></div></div>
+            <button class="brand-drop" type="button" id="brandDrop">
+              <span class="brand-drop-ico">↥</span>
+              <strong>Загрузить фото-референс</strong>
+              <span>Перетащите снимок или выберите на компьютере</span>
+            </button>
+            <img id="brandReference" class="brand-reference" alt="Загруженный референс" src="assets/favicon.svg" hidden>
+            <p class="field-hint">Фото задаёт цвета сторис, витрины и прайса. Файлы pdf и docx задают голос, если в них есть текст.</p>
+            <div class="brand-upload-meta" id="brandUploadMeta" hidden></div>
+            <div class="brand-raw-wrap" id="brandRawWrap" hidden>
+              <button class="brand-raw-toggle" type="button" id="brandRawToggle" aria-expanded="false">Показать распознанный текст</button>
+              <pre class="brand-raw" id="brandRaw" hidden></pre>
+            </div>
+            <div class="brand-apply">
+              <strong>Где применяется</strong>
+              <div class="brand-apply-list">
+                <span>Сторис</span><span>Витрина</span><span>Прайс</span><span>Новости</span><span>Ответы</span>
+              </div>
+              <p>Тон, подпись и палитра подставляются автоматически. Тексты всё равно можно править перед публикацией.</p>
+            </div>
+          </aside>
+
+          <div class="brand-editor">
+            <article class="card brand-preview-card">
+              <div class="card-head">
+                <div>
+                  <div class="card-title" id="brandPreviewName">Название бренда</div>
+                  <div class="card-sub" id="brandPreviewTagline">Слоган появится здесь</div>
+                  <p class="brand-preview-sign" id="brandPreviewSign">Подпись</p>
+                </div>
+              </div>
+              <div class="brand-preview-hero" id="brandPreviewHero">
+                <div class="brand-preview-swatches" id="brandPaletteView" aria-label="Палитра бренда"></div>
+              </div>
+              <div class="brand-preview-facts">
+                <span><b>Тон</b><strong id="brandPreviewTone">—</strong></span>
+                <span><b>Аудитория</b><strong id="brandPreviewAudience">—</strong></span>
+              </div>
+            </article>
+
+            <form class="card brand-form" id="brandbookForm">
+              <div class="card-head"><div><div class="card-title">Редакционный паспорт</div><div class="card-sub">Можно править после загрузки или генерации</div></div><span class="brand-form-state" id="brandFormState">черновик</span></div>
+              <div class="brand-field-grid">
+                <div class="field"><label for="brandName">Название бренда</label><input id="brandName" maxlength="120" placeholder="Кофейня «Полдень»"></div>
+                <div class="field"><label for="brandTagline">Слоган</label><input id="brandTagline" maxlength="140" placeholder="Тихое место на Плотинке"></div>
+                <div class="field field--wide"><label for="brandMission">Миссия</label><textarea id="brandMission" rows="2" maxlength="600" placeholder="Зачем бренд существует"></textarea></div>
+                <div class="field field--wide"><label for="brandAudience">Аудитория</label><textarea id="brandAudience" rows="2" maxlength="600" placeholder="Кто ваши гости"></textarea></div>
+                <div class="field field--wide"><label for="brandTone">Тон и голос</label><textarea id="brandTone" rows="3" maxlength="900" placeholder="Как говорим: спокойно, конкретно, без давления"></textarea></div>
+                <div class="field"><label for="brandSignature">Подпись</label><input id="brandSignature" maxlength="120" placeholder="Команда «Полдень»"></div>
+                <div class="field field--wide"><label for="brandImagery">Визуальный стиль</label><textarea id="brandImagery" rows="2" maxlength="600" placeholder="Свет, фактуры, что снимаем и чего избегаем"></textarea></div>
+                <div class="field field--wide">
+                  <span class="brand-color-label" id="brandColorLabel">Цвета</span>
+                  <div class="brand-color-row">
+                    <label class="brand-color"><span>Акцент</span><input id="brandAccent" type="color" value="#C56B2E" aria-label="Акцент"><input id="brandAccentHex" type="text" maxlength="7" spellcheck="false" value="#C56B2E" aria-label="Акцент, HEX"></label>
+                    <label class="brand-color"><span>Фон</span><input id="brandPaper" type="color" value="#F5EFE2" aria-label="Фон"><input id="brandPaperHex" type="text" maxlength="7" spellcheck="false" value="#F5EFE2" aria-label="Фон, HEX"></label>
+                    <label class="brand-color"><span>Текст</span><input id="brandInk" type="color" value="#1E1B16" aria-label="Текст"><input id="brandInkHex" type="text" maxlength="7" spellcheck="false" value="#1E1B16" aria-label="Текст, HEX"></label>
+                  </div>
+                  <div class="brand-palettes" id="brandPalettes" role="group" aria-labelledby="brandColorLabel">
+                    <button type="button" data-brand-palette="paper" aria-pressed="false">Бумага</button>
+                    <button type="button" data-brand-palette="pine" aria-pressed="false">Хвоя</button>
+                    <button type="button" data-brand-palette="ink" aria-pressed="false">Чернила</button>
+                    <button type="button" data-brand-palette="shop" aria-pressed="false">Витрина</button>
+                  </div>
+                  <div class="field-hint" id="brandColorHint">Образец открывает палитру, рядом можно вписать HEX. Готовый набор ставит акцент, фон и текст сразу.</div>
+                </div>
+              </div>
+              <div class="brand-rules">
+                <div><strong>Можно</strong><span id="brandDo">—</span></div>
+                <div><strong>Нельзя</strong><span id="brandDont">—</span></div>
+              </div>
+              <div class="client-actions-row"><button class="btn btn--small" type="submit" id="brandFormSave">Сохранить материалы</button><span class="field-hint" id="brandSaveStatus">Изменения применятся к новым генерациям.</span></div>
+            </form>
+          </div>
+        </div>
+        <input id="brandFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif,.pdf,.docx,.txt,.md,.json" hidden>
+      </section>
+
+      <section class="view" id="view-cabinet" aria-labelledby="cabinetTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="cabinetTitle">Поля карточки</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Телефон и часы человек видит, когда карточку уже открыл. В поиск карточка попадает текстами: ответы, новости, сторис, ключевые слова. Разовая настройка оставляет её адресом.</span></p>
+            <p id="cabinetNote">По умолчанию тексты отправляет аккаунт представителя. Кнопка «Нужно согласование» — добровольный режим. Истории, события и публикации на тарифе «Базовый» кабинет Яндекса не примет.</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--small" id="cabinetPublish" type="button">Выложить готовое</button>
+            <button class="btn btn--ghost btn--small" id="cabinetFill" type="button">Поставить пробелы в очередь</button>
+            <a class="btn btn--ghost btn--small" href="https://yandex.ru/sprav/" target="_blank" rel="noopener">Открыть кабинет</a>
+          </div>
+        </div>
+        <div class="card-head">
+          <div>
+            <div class="card-title">Тексты карточки</div>
+            <div class="card-sub">Собрать или улучшить из фактов карточки. Если факта нет — вопрос, поле пустое. Сервис читает текст и отправляет его аккаунтом представителя.</div>
+          </div>
+        </div>
+        <div id="cabinetOffers" class="cabinet-offers"></div>
+        <div id="cabinetGroups" class="cabinet-groups"></div>
+        <form class="card card-profile" id="cardProfileForm">
+          <div class="card-head"><div><div class="card-title">Поля карточки</div><div class="card-sub">Пустое поле ждёт ответ клиента. Факты сами не подставляем.</div></div></div>
+          <div class="grid grid--2e">
+            <label class="field">Полное название<input id="cardName" maxlength="100" autocomplete="off" placeholder="Как звучит полное название? Без вида деятельности и города."></label>
+            <label class="field">Короткое название<input id="cardShortName" maxlength="55" autocomplete="off" placeholder="Если короче полного. Без вида деятельности и города."></label>
+            <label class="field">Основная рубрика<input id="cardRubricMain" maxlength="120" autocomplete="off" placeholder="Одна основная рубрика"></label>
+            <label class="field">Вторичные рубрики<input id="cardRubricsSecondary" maxlength="240" autocomplete="off" placeholder="До двух, через запятую. Услуги сюда не пишем."></label>
+            <label class="field">Телефон<input id="cardPhone" maxlength="40" autocomplete="off" placeholder="Какой телефон указать?"></label>
+            <label class="field">Сайт<input id="cardSite" maxlength="300" inputmode="url" autocomplete="off" placeholder="Какой сайт? Если нет — пусто."></label>
+            <label class="field">Соцсеть<input id="cardSocial" maxlength="200" autocomplete="off" placeholder="Какая соцсеть и ссылка? Пока не прислали — пусто."></label>
+            <label class="field">Почта<input id="cardEmail" maxlength="200" autocomplete="off" placeholder="Какая почта? Пока не прислали — пусто."></label>
+            <label class="field">Мессенджер<input id="cardMessenger" maxlength="200" autocomplete="off" placeholder="Какой мессенджер? Пока не прислали — пусто."></label>
+            <label class="field">Адрес<input id="cardAddress" maxlength="200" autocomplete="off" placeholder="Один адрес: улица и дом"></label>
+            <label class="field">Ориентир<input id="cardAddressComment" maxlength="80" autocomplete="off" placeholder="Короткий ориентир, не телефон"></label>
+            <label class="field">Статус
+              <select id="cardStatus">
+                <option value="">не указано</option>
+                <option value="working">Работает</option>
+                <option value="paused">Временно не работает</option>
+                <option value="closed">Больше не работает</option>
+              </select>
+            </label>
+            <label class="field">Кнопка записи<input id="cardBooking" maxlength="500" inputmode="url" autocomplete="off" placeholder="Сайт или форма клиента. Ссылку не придумываем."></label>
+          </div>
+          <p class="field-hint" id="cardBookingNote">Эта же ссылка стоит в кнопке профиля, в сторис, на витрине и в прайсе.</p>
+          <div class="grid grid--2e">
+            <label class="field">Будни<input id="cardHoursWeekdays" maxlength="80" placeholder="Часы в будни"></label>
+            <label class="field">Выходные<input id="cardHoursWeekends" maxlength="80" placeholder="Часы в выходные"></label>
+            <label class="field">Праздники<input id="cardHoursHolidays" maxlength="80" placeholder="Часы в праздники"></label>
+          </div>
+          <p class="field-hint" id="cardHoursAsk">Если часы пустые, нужны будни, выходные и праздники.</p>
+          <label class="field">Особенности, отдельно от рубрик<textarea id="cardFeatures" rows="3" placeholder="Каждая особенность с новой строки"></textarea></label>
+          <div class="card-head"><div><div class="card-title">Фото профиля</div><div class="card-sub">Порядок: логотип, вход, внутри, работа, снаружи. Вход — только живая дверь.</div></div></div>
+          <div class="grid grid--2e">
+            <label class="field">Логотип<input id="cardPhotoLogo" maxlength="300" placeholder="Пришлите логотип. Пока файла нет, слот пустой."><input id="cardPhotoLogoFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif" data-card-photo="cardPhotoLogo" aria-label="Загрузить логотип"></label>
+            <label class="field">Вход<input id="cardPhotoEntrance" maxlength="300" placeholder="Фотография живой двери. jpeg, png, webp или gif."><input id="cardPhotoEntranceFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif" data-card-photo="cardPhotoEntrance" aria-label="Загрузить фото входа"></label>
+            <label class="field">Внутри<input id="cardPhotoInside" maxlength="300" placeholder="Фото внутри. Пока его нет, слот пустой."><input id="cardPhotoInsideFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif" data-card-photo="cardPhotoInside" aria-label="Загрузить фото внутри"></label>
+            <label class="field">Работа<input id="cardPhotoWork" maxlength="300" placeholder="Фото работы. Пока его нет, слот пустой."><input id="cardPhotoWorkFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif" data-card-photo="cardPhotoWork" aria-label="Загрузить фото работы"></label>
+            <label class="field">Снаружи<input id="cardPhotoOutside" maxlength="300" placeholder="Фото снаружи. Пока его нет, слот пустой."><input id="cardPhotoOutsideFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif" data-card-photo="cardPhotoOutside" aria-label="Загрузить фото снаружи"></label>
+          </div>
+          <div class="card-head"><div><div class="card-title">УТП</div><div class="card-sub">Зелёная акция на карточке. Сравниваем прочитанные акции конкурентов и ставим самую конкретную из вашего прайса.</div></div></div>
+          <div class="promo-offer" id="promoOffer">
+            <button class="btn btn--small" type="button" id="promoOfferRun">Собрать УТП</button>
+            <div id="promoOfferResult" class="promo-offer-result"></div>
+          </div>
+          <div class="card-head"><div><div class="card-title">Акция</div><div class="card-sub">Анонс до 70 знаков, описание до 200. Дату окончания не ставим сами.</div></div></div>
+          <div class="grid grid--2e">
+            <label class="field">Анонс<input id="cardPromoAnnouncement" maxlength="70" placeholder="До 70 знаков. Текст не придумываем."></label>
+            <label class="field">Описание<input id="cardPromoDescription" maxlength="200" placeholder="До 200 знаков. Текст не придумываем."></label>
+            <label class="field">Окончание<input id="cardPromoEnds" maxlength="40" placeholder="Срок, если клиент назвал. Иначе пусто."></label>
+          </div>
+          <p class="field-hint" id="cardPromoPrompt"></p>
+          <div class="card-head"><div><div class="card-title">Событие</div><div class="card-sub">Тема, начало и конец. Дату не ставим сами. Видео не генерируем.</div></div></div>
+          <div class="grid grid--2e">
+            <label class="field">Тема<input id="cardEventTopic" maxlength="160" placeholder="Какая тема события?"></label>
+            <label class="field">Начало<input id="cardEventStart" maxlength="80" placeholder="Когда начинается?"></label>
+            <label class="field">Конец<input id="cardEventEnd" maxlength="80" placeholder="Когда заканчивается?"></label>
+            <label class="field">Видео<input id="cardEventVideo" maxlength="300" placeholder="Свой ролик. Если его нет, слот пустой."></label>
+          </div>
+          <div class="card-head"><div><div class="card-title">Блоки, которые пишет Яндекс</div><div class="card-sub">Текст не сочиняем. Здесь только показать или скрыть.</div></div></div>
+          <div class="grid grid--2e">
+            <label class="field">Коротко о месте<select id="cardShowAbout"><option value="">не выбрано</option><option value="show">показать</option><option value="hide">скрыть</option></select></label>
+            <label class="field">Подписи<select id="cardShowCaptions"><option value="">не выбрано</option><option value="show">показать</option><option value="hide">скрыть</option></select></label>
+            <label class="field">Закреплённое фото<select id="cardShowPin"><option value="">не выбрано</option><option value="show">показать</option><option value="hide">скрыть</option></select></label>
+          </div>
+          <label class="field">О компании, до 250<textarea id="cardAboutShort" rows="3" maxlength="250" placeholder="Только факты. Если их нет — пусто."></textarea></label>
+          <label class="field">О компании, до 2550<textarea id="cardAboutExtended" rows="6" maxlength="2550" placeholder="Только факты. Если их нет — пусто."></textarea></label>
+          <div class="row-actions">
+            <button class="btn btn--small" type="submit" id="cardProfileSave">Сохранить поля</button>
+            <button class="btn btn--ghost btn--small" type="button" id="cardPromoKeep">Оставить акцию</button>
+            <span class="field-hint" id="cardProfileStatus"></span>
+          </div>
+        </form>
+        <article class="card owner-checklist" id="ownerChecklist" hidden>
+          <div class="card-head"><div><div class="card-title">Разделы для знака владельца</div><div class="card-sub" id="ownerChecklistNote"></div></div><span class="chip" id="ownerChecklistCount"></span></div>
+          <ul id="ownerChecklistItems"></ul>
+        </article>
+      </section>
+
+      <section class="view" id="view-autopilot" aria-labelledby="autoTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="autoTitle">Ведение</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Текст уходит в Яндекс сразу. Предварительное согласование включается в настройках: тогда новость, прайс и сторис сначала приходят в Telegram или MAX.</span></p>
+          </div>
+        </div>
+
+        <article class="card auto-ledger" id="autoLedger" data-state="off" aria-live="polite">
+          <div class="auto-ledger-main">
+            <p class="auto-ledger-now" id="autoStatusChip">Выключен</p>
+            <p id="autoStatusText">По умолчанию сервис сам генерирует текст, читает его и отправляет в Яндекс аккаунтом представителя.</p>
+            <dl class="auto-facts">
+              <div><dt>Сделает</dt><dd id="autoWill">Соберёт ответы, новости, сторис и ключевые слова и отправит их аккаунтом представителя.</dd></div>
+              <div><dt>Не сделает</dt><dd id="autoWont">Пароль Яндекса не просим. Очередь одобрения в кабинете не шаг клиента.</dd></div>
+              <div><dt>Нужен человек</dt><dd id="autoNeeds">По умолчанию человек не нужен: текст уходит аккаунтом представителя. Кнопка «Нужно согласование» — добровольный режим.</dd></div>
+            </dl>
+            <p class="auto-meta"><span id="autoModeChip">очередь выключена</span><span id="autoSyncChip">карточку ещё не читали</span></p>
+            <p class="field-hint" id="autoConnectNote"></p>
+          </div>
+          <div class="auto-ledger-actions">
+            <button class="btn btn--small" id="autoDisconnectBtn" type="button" hidden>Остановить</button>
+            <button class="btn btn--small" id="autoConnectBtn" type="button">Включить очередь</button>
+            <button class="btn btn--ghost btn--small" id="autoRunBtn" type="button" hidden>Запустить цикл</button>
+            <button class="btn btn--ghost btn--small" id="autoAutoBtn" type="button" hidden>Включить цикл</button>
+            <button class="btn btn--ghost btn--small" id="autoSmsBtn" type="button" hidden>Подключить SMS</button>
+          </div>
+        </article>
+
+        <div class="kpis">
+          <div class="kpi"><div class="kpi-top">На человеке</div><div class="kpi-value" id="autoKpiActive">0</div><div class="kpi-foot">аккаунт представителя</div></div>
+          <div class="kpi"><div class="kpi-top">В кабинете</div><div class="kpi-value" id="autoKpiDone">0</div><div class="kpi-foot">шаги, которые Локус уже закрыл</div></div>
+          <div class="kpi"><div class="kpi-top">Отчёты</div><div class="kpi-value" id="autoKpiReports">0</div><div class="kpi-foot">сформированы в Локусе</div></div>
+        </div>
+
+        <div class="grid grid--2 auto-lower">
+          <div class="card" id="ownerAccess">
+            <div class="card-head">
+              <div>
+                <div class="card-title">Доступ представителя</div>
+                <div class="card-sub" id="ownerAccessStatus">Ждём владельца</div>
+              </div>
+            </div>
+            <p class="auto-copy">Клиент добавляет корпоративную почту Локуса Farot11@ya.ru представителем. Этот аккаунт ведёт тексты карточки. Пароль Яндекса не просим.</p>
+            <div class="field">
+              <label for="operatorYandexId">Яндекс ID</label>
+              <input id="operatorYandexId" type="text" maxlength="80" placeholder="логин или почта" autocomplete="off" spellcheck="false">
+            </div>
+            <ol class="owner-steps">
+              <li>Владелец уже есть: кабинет клиента, «Доступы», этот ID, роль «Представитель», подтверждение у себя.</li>
+              <li>Владельца нет: клиент сам нажимает «Получить доступ» и вводит код с телефона карточки на сайте Яндекса. Затем добавляет этот ID как представителя.</li>
+              <li>Откройте свой список «Организации». Компания на месте — отметьте здесь. Пока её нет, статус остаётся «ждём владельца».</li>
+            </ol>
+            <div class="row-actions">
+              <button class="btn btn--small" id="operatorYandexSave" type="button">Сохранить ID</button>
+              <a class="btn btn--ghost btn--small" href="https://yandex.ru/business/" target="_blank" rel="noopener">Открыть организации</a>
+              <button class="btn btn--small" id="ownerAccessBtn" type="button">Отметить у себя</button>
+              <button class="btn btn--ghost btn--small" id="ownerAccessClear" type="button" hidden>Снова ждать</button>
+              <button class="btn btn--ghost btn--small" id="ownerPackageBtn" type="button">Собрать пакет в очередь</button>
+              <button class="btn btn--ghost btn--small" id="autoSyncBtn" type="button">Прочитать карточку</button>
+            </div>
+            <p class="field-hint" id="ownerAccessNote"></p>
+          </div>
+          <div class="card">
+            <div class="card-head"><div><div class="card-title">Отчёт</div><div class="card-sub">Остаётся здесь, пока бот не настроен</div></div><span class="chip" id="autoReportStatus">черновик</span></div>
+            <pre id="autoReportText">Сформируйте отчёт. Он покажет очередь, отзывы и следующие шаги внутри кабинета.</pre>
+            <div class="row-actions">
+              <button class="btn btn--small" id="autoReportGenerate" type="button">Сформировать отчёт</button>
+              <button class="btn btn--ghost btn--small" id="autoReportSend" type="button">Проверить отправку</button>
+            </div>
+            <p class="field-hint" id="autoDeliveryNote"></p>
+            <div class="card-head auto-report-head"><div><div class="card-title">Куда слать отчёт</div><div class="card-sub">Раз в день, в выбранное время</div></div><span class="chip" id="autoIntegrationChip">не настроено</span></div>
+            <div class="grid grid--2e">
+              <div class="field"><label for="autoReportTime">Время отчёта</label><input id="autoReportTime" type="time" value="09:00"></div>
+              <div class="field"><label for="autoReportDays">Период, дней</label><input id="autoReportDays" type="number" min="1" max="30" value="1"></div>
+            </div>
+            <div class="row-actions">
+              <label class="chip"><input id="autoReportEnabled" type="checkbox" checked> ежедневный отчёт</label>
+            </div>
+            <div class="grid grid--2e" id="autoCycleBox" hidden>
+              <div class="field"><label for="autoInterval">Цикл, минут</label><input id="autoInterval" type="number" min="5" max="1440" value="60"></div>
+              <div class="field auto-cycle-flags">
+                <label class="chip"><input id="autoReviews" type="checkbox" checked> готовить ответы на новые отзывы</label>
+                <label class="chip"><input id="autoNews" type="checkbox" checked> закрывать новости из очереди в кабинете</label>
+              </div>
+            </div>
+            <div class="row-actions">
+              <button class="btn btn--ghost btn--small" id="autoTestTelegram" type="button">Проверить Telegram</button>
+              <button class="btn btn--ghost btn--small" id="autoTestMax" type="button">Проверить MAX</button>
+            </div>
+            <p class="field-hint" id="autoNextRun"></p>
+            <p class="field-hint" id="autoConfigNote"></p>
+          </div>
+        </div>
+
+        <div class="card auto-history">
+          <div class="card-head"><div><div class="card-title">История</div><div class="card-sub">Отчёты, циклы и отправки остаются в кабинете</div></div></div>
+          <div id="autoReports" class="mini-list"></div>
+          <div class="mini-label">Циклы</div>
+          <div id="autoRuns" class="mini-list"></div>
+          <div class="mini-label">Telegram и MAX</div>
+          <div id="autoLog" class="mini-list"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-settings" aria-labelledby="setTitle" hidden>
+        <div class="page-head">
+          <div>
+            <h2 id="setTitle">Настройки</h2>
+            <p class="view-intro"><span class="vi-mark">●</span><span>Аккаунт, тариф и куда ведут кнопки.</span></p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--small" type="button" id="saveSettings"><svg width="13" height="13" aria-hidden="true"><use href="#i-check"/></svg> Сохранить</button>
+          </div>
+        </div>
+
+        <article class="card" id="preApprovalCard">
+          <div class="card-head">
+            <div>
+              <div class="card-title">Предварительное согласование</div>
+              <div class="card-sub" id="approvalHint">Выключено. Новость, прайс и сторис уходят в Яндекс сразу.</div>
+            </div>
+            <button class="btn btn--ghost btn--small" id="approvalToggle" type="button" aria-pressed="false">Выключено</button>
+          </div>
+          <p>Включите плашку, если хотите сначала прочитать текст. Сгенерированные новость, прайс и сторис придут в Telegram или MAX. В Яндекс они уйдут после кнопки в боте.</p>
+          <div class="grid grid--2e">
+            <div class="field"><label for="autoTelegramChat">Чат Telegram</label><input id="autoTelegramChat" type="text" inputmode="numeric" autocomplete="off" placeholder="123456789"></div>
+            <div class="field"><label for="autoMaxChat">Чат MAX</label><input id="autoMaxChat" type="text" inputmode="text" placeholder="id чата MAX"></div>
+          </div>
+          <div class="row-actions">
+            <label class="chip"><input id="autoTelegramEnabled" type="checkbox"> Telegram</label>
+            <label class="chip"><input id="autoMaxEnabled" type="checkbox"> MAX</label>
+            <button class="btn btn--small" id="autoSettingsSave" type="button">Сохранить чаты</button>
+          </div>
+          <p class="field-hint" id="autoTelegramHint">Клиент открывает бота и нажимает «Старт». Пока на сервере не задан токен бота, сообщение в мессенджер не уходит.</p>
+        </article>
+
+        <article class="card account-card" aria-label="Аккаунт и данные">
+          <div class="card-head"><div><div class="card-title">Аккаунт</div><div class="card-sub">Кто вошёл и какая организация открыта</div></div><span class="chip" id="accountDbStatus">Ваш аккаунт</span></div>
+          <div class="account-grid">
+            <div><span>Пользователь</span><strong id="accountName">—</strong><small id="accountEmail">—</small></div>
+            <div><span>Организация</span><strong id="accountOrg">—</strong><small id="accountPlan">—</small></div>
+            <div><span>Доступ</span><strong id="accountRole">Владелец</strong><small>вы вошли в эту организацию</small></div>
+            <div><span>Карточка</span><strong>В Локусе</strong><small>в Яндекс само не уходит</small></div>
+          </div>
+        </article>
+
+        <div class="settings-grid">
+          <details class="settings-more">
+            <summary>Редкие настройки</summary>
+          <article class="card">
+            <div class="card-head"><div><div class="card-title">Куда вести</div><div class="card-sub">Кнопка открывает раздел, без лишнего сообщения</div></div></div>
+            <div class="integration">
+              <span class="int-logo int-logo--ya">Я</span>
+              <div class="int-text"><strong>Яндекс.Бизнес</strong><span>Текст уходит аккаунтом представителя сразу</span></div>
+              <button class="btn btn--ghost btn--small" type="button" data-view="settings">К согласованию</button>
+            </div>
+            <div class="integration">
+              <span class="int-logo int-logo--mc">М</span>
+              <div class="int-text"><strong>Яндекс.Метрика</strong><span>Показов Метрики в кабинете нет</span></div>
+              <button class="btn btn--ghost btn--small" type="button" data-integration="analytics" data-integration-title="Метрика не подключена" data-integration-note="Здесь только действия кабинета, не счётчик Метрики.">К результатам</button>
+            </div>
+            <div class="integration">
+              <span class="int-logo int-logo--tg">TG</span>
+              <div class="int-text"><strong>Telegram</strong><span>Чат для предварительного согласования, токен бота — на сервере</span></div>
+              <button class="btn btn--ghost btn--small" type="button" data-view="settings">К согласованию</button>
+            </div>
+            <div class="integration">
+              <span class="int-logo int-logo--crm">CRM</span>
+              <div class="int-text"><strong>Битрикс24 / amoCRM</strong><span>Обмена с CRM нет · клиенты ведутся в кабинете</span></div>
+              <button class="btn btn--ghost btn--small" type="button" data-integration="clients" data-integration-title="CRM не подключена" data-integration-note="Заявки и визиты — в разделе «Клиенты».">К клиентам</button>
+            </div>
+            <p class="small" style="margin-top:10px">Пароль Яндекса не просим. По умолчанию текст уходит аккаунтом представителя. Предварительное согласование включается плашкой выше.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head"><div><div class="card-title">Голос бренда</div><div class="card-sub">используется во всех текстах</div></div></div>
+            <div class="field">
+              <label for="voiceTone">Тон</label>
+              <select id="voiceTone">
+                <option value="care">Заботливый, но по делу</option>
+                <option value="business">Деловой и короткий</option>
+                <option value="friendly">Дружеский</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="voiceStop">Стоп-слова</label>
+              <input id="voiceStop" type="text" value="бесплатно, вакансия, аренда, оптом, доставка еды">
+              <p class="field-hint">Локус не использует эти формулировки в ответах и постах.</p>
+            </div>
+            <div class="field">
+              <label for="voiceSign">Подпись</label>
+              <input id="voiceSign" type="text" value="">
+            </div>
+            <div class="field">
+              <label for="voiceFacts">Факты, которые можно упоминать</label>
+              <textarea id="voiceFacts" placeholder="Только то, что есть в карточке"></textarea>
+            </div>
+            <p class="field-hint">Следующий ответ на отзыв возьмёт этот тон.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-head"><div><div class="card-title">Правила публикации</div><div class="card-sub">по умолчанию текст уходит сам, согласование — по кнопке</div></div></div>
+            <div class="rule-row"><div class="rtext">Автоответ на 4–5★<span>сервис читает текст и отправляет аккаунтом представителя</span></div><button class="btn btn--ghost btn--small" type="button" data-rule-go="reviews" data-rule-title="Отправка аккаунтом представителя" data-rule-note="Ответ собирается в отзывах. По умолчанию его отправляет аккаунт представителя.">К отзывам</button></div>
+            <div class="rule-row"><div class="rtext">Публикация сторис<span>уходит аккаунтом представителя, очередь не шаг клиента</span></div><button class="btn btn--ghost btn--small" type="button" data-rule-go="stories" data-rule-title="Отправка аккаунтом представителя" data-rule-note="Серия собирается в сторис. Очередь одобрения в кабинете не шаг клиента.">К сторис</button></div>
+            <div class="rule-row"><div class="rtext">Обновление цен<span>из файла, в текстах карточки</span></div><button class="btn btn--ghost btn--small" type="button" data-rule-go="prices" data-rule-title="Цены в текстах" data-rule-note="Цены правятся в прайсе и попадают в тексты карточки.">К прайсу</button></div>
+            <div class="rule-row"><div class="rtext">Эскалация негатива<span>1–3★ остаются в отзывах, пока ответ не собран</span></div><button class="btn btn--ghost btn--small" type="button" data-rule-go="reviews" data-rule-title="Ответ в отзывах" data-rule-note="Негатив остаётся в отзывах. Отдельный канал не подключается переключателем.">К отзывам</button></div>
+            <div class="rule-row"><div class="rtext">Ответы на 1–3★<span>тоже отправляет аккаунт представителя, если согласование выключено</span></div><button class="btn btn--ghost btn--small" type="button" data-rule-go="reviews" data-rule-title="Отправка аккаунтом представителя" data-rule-note="Ответ на 1–3★ собирается в отзывах. Кнопка «Нужно согласование» — добровольный режим.">К отзывам</button></div>
+          </article>
+          </details>
+
+          <article class="card">
+            <div class="card-head"><div><div class="card-title">Тариф и лимиты</div><div class="card-sub" id="planCardSub">«Стартовый» · 2 500 ₽ / мес</div></div><span class="chip" id="trialChip">до оплаты</span></div>
+            <div class="usage-row"><span>Тексты и новости</span><b>0 / 0</b></div>
+            <div class="usage-bar"><i style="width:0%"></i></div>
+            <div class="usage-row"><span>Изображения</span><b>0 / 0</b></div>
+            <div class="usage-bar"><i style="width:0%"></i></div>
+            <div class="usage-row"><span>Ответы в этом месяце</span><b>0 / 0</b></div>
+            <div class="usage-bar"><i style="width:0%"></i></div>
+            <div class="usage-row"><span>Товары и услуги</span><b>0 / 0</b></div>
+            <div class="usage-bar"><i style="width:0%"></i></div>
+            <div class="usage-row"><span>Фразы в ядре</span><b>0 / 0</b></div>
+            <div class="usage-bar"><i style="width:0%"></i></div>
+            <p class="small" style="margin-top:6px" id="usageNote">Это израсходованная квота, а не число отвеченных отзывов. Лимиты обновляются по данным кабинета.</p>
+            <div id="verifyBox" class="field-hint" hidden></div>
+            <div id="invoiceIssue" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:end">
+              <label class="field" style="margin:0">Пакет
+                <select id="invoicePlan">
+                  <option value="Стартовый">Стартовый, 2 500 ₽</option>
+                  <option value="Самостоятельный">Самостоятельный, 5 500 ₽</option>
+                  <option value="Автоматический">Автоматический, 11 900 ₽</option>
+                </select>
+              </label>
+              <button class="btn btn--small" type="button" id="issueInvoice">Выставить счёт</button>
+            </div>
+            <p class="small" id="invoiceNote" style="margin-top:8px">Оплаты картой нет. Счёт остаётся в статусе «ждём оплату», пока владелец не отметит его вручную.</p>
+            <div id="invoiceList" class="mini-list"></div>
+            <div class="row-actions" id="clientSheets" style="margin-top:12px">
+              <a class="btn btn--ghost btn--small" id="sheetAudit" href="#" target="_blank" rel="noopener">Лист проверки</a>
+              <a class="btn btn--ghost btn--small" id="sheetReport" href="#" target="_blank" rel="noopener">Недельный отчёт</a>
+              <a class="btn btn--ghost btn--small" id="sheetInvoice" href="#" target="_blank" rel="noopener">Счёт и договор</a>
+            </div>
+            <div class="danger-zone" style="margin-top:14px">
+              <p>Отключение в Локусе не снимает карточку с Яндекс.Карт. Очередь и данные остаются в кабинете.</p>
+              <button class="btn-danger" type="button" id="disconnectCard">Открыть чат поддержки</button>
+            </div>
+          </article>
+        </div>
+
+        <article class="card support-card" style="margin-top:14px">
+          <div class="card-head">
+            <div>
+              <div class="card-title">Поддержка</div>
+              <div class="card-sub">Чат по фактам кабинета. Письмо не отправляется.</div>
+            </div>
+            <span class="chip">без почты</span>
+          </div>
+          <div id="supportChat" class="support-chat" aria-live="polite"></div>
+          <label class="checkline" id="supportConsentRow"><input id="supportConsent" type="checkbox"> <span>Согласен на обработку данных для ответа на обращение</span></label>
+          <div class="support-actions">
+            <label class="sr-only" for="supportMessage">Сообщение в поддержку</label>
+            <textarea id="supportMessage" rows="2" maxlength="2000" placeholder="Спросите про тариф, публикацию или то, чего Локус не делает"></textarea>
+            <button class="btn btn--small" type="button" id="supportSend">Отправить</button>
+          </div>
+          <p class="small" id="supportResult" role="status"></p>
+        </article>
+      </section>
+    </main>
+  </div>
+</div>
+
+
+<div class="look-modal" id="lookModal" hidden>
+  <div class="look-modal-backdrop" data-look-close></div>
+  <div class="look-dialog" role="dialog" aria-modal="true" aria-labelledby="lookModalTitle">
+    <button class="tariff-close" type="button" aria-label="Закрыть" data-look-close>×</button>
+    <span class="eyebrow">Оформление</span>
+    <h3 id="lookModalTitle">Три варианта по вашим материалам</h3>
+    <p class="look-modal-lead" id="lookModalLead">Выберите, как будут выглядеть сторис. Витрина и прайс возьмут те же цвета.</p>
+    <div class="look-modal-grid" id="lookModalGrid"></div>
+  </div>
+</div>
+
+<div class="tariff-modal" id="tariffModal" hidden>
+  <div class="tariff-backdrop" data-tariff-close></div>
+  <div class="tariff-dialog" role="dialog" aria-modal="true" aria-labelledby="tariffTitle">
+    <button class="tariff-close" type="button" aria-label="Закрыть тарифы" data-tariff-close>×</button>
+    <span class="eyebrow">Тарифы · сначала просмотр кабинета</span>
+    <h3 id="tariffTitle">Тексты и запросы на месяц</h3>
+        <p class="tariff-lead">Один тариф на карточку. Счёт — на месячную цену. Отдельного пробного запаса нет. Разовая настройка оставляет карточку адресом.</p>
+        <div class="tariff-grid">
+          <article class="tariff-card">
+            <span class="tariff-name">Стартовый</span>
+            <div class="tariff-price"><b>2 500 ₽</b><small>/ мес</small></div>
+            <p class="tariff-for">Одна карточка и базовый ритм</p>
+            <ul><li>60 ответов · 30 сторис · 30 позиций</li><li>24 изображения · 100 фраз · 60 текстов</li><li>Одна карточка</li></ul>
+            <button class="btn btn--ghost btn--wide" type="button" data-plan-choose data-plan="Стартовый" data-plan-state="invoice">Выбрать</button>
+          </article>
+          <article class="tariff-card tariff-card--accent">
+            <span class="tariff-name">Самостоятельный</span>
+            <div class="tariff-price"><b>5 500 ₽</b><small>/ мес</small></div>
+            <p class="tariff-for">Те же тексты и запросы, лимиты шире</p>
+            <ul><li>300 ответов · 150 сторис · 150 позиций</li><li>60 изображений · 500 фраз · 300 текстов</li><li>Одна карточка</li></ul>
+            <button class="btn btn--wide" type="button" data-plan-choose data-plan="Самостоятельный" data-plan-state="invoice">Выбрать</button>
+          </article>
+          <article class="tariff-card">
+            <span class="tariff-name">Автоматический</span>
+            <div class="tariff-price"><b>11 900 ₽</b><small>/ мес</small></div>
+            <p class="tariff-for">Сеть и автопилот внутри кабинета</p>
+            <ul><li>1 000 ответов · 500 сторис · 600 позиций</li><li>120 изображений · 2 000 фраз · 1 000 текстов · автопилот в кабинете</li><li>Следующая точка — 2 500 ₽</li></ul>
+            <button class="btn btn--ghost btn--wide" type="button" data-plan-choose data-plan="Автоматический" data-plan-state="invoice">Выбрать</button>
+          </article>
+        </div>
+        <small class="tariff-note">По умолчанию сервис сам генерирует текст, читает его и отправляет в Яндекс аккаунтом представителя. Кнопка «Нужно согласование» — добровольный режим. «Выбрать» выставляет счёт в кабинете, оплаты картой нет.</small>
+  </div>
+</div>
+
+<div class="shot-lightbox" id="shotLightbox" hidden>
+  <button class="shot-lightbox-back" type="button" data-shot-close aria-label="Закрыть"></button>
+  <figure>
+    <img id="shotLightboxImg" alt="">
+    <figcaption id="shotLightboxCap"></figcaption>
+  </figure>
+</div>
+<div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
+<script src="assets/js/session.js"></script>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/app.js?v=cabinet13"></script>
+<script src="assets/js/consent.js"></script>
+<script src="assets/js/sw-register.js" defer></script>
+</body>
+</html>

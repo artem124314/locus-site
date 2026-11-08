@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Статус Локуса</title>
+  <meta name="description" content="Текущий статус сервиса Локус: API, база данных и планировщик.">
+  <style>
+    :root { --ink:#1a1a16; --muted:#6b6b63; --paper:#fbfaf6; --card:#f7f6f1; --line:#e5e1d6; --accent:#b4452f; --ok:#2f6b45; --warn:#a46b1f; --bad:#a3342a; --sans:"Helvetica Neue", Arial, sans-serif; --serif:Georgia, "Times New Roman", serif; }
+    * { box-sizing:border-box; }
+    html, body { overflow-x: clip; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.5 var(--serif); }
+    :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    a:active, button:active { opacity: .72; }
+    .wrap { width:min(760px, calc(100% - 32px)); margin:0 auto; padding:48px 0 64px; }
+    .brand { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:44px; }
+    .brand a { color:var(--ink); text-decoration:none; font:700 16px/1 var(--sans); letter-spacing:0; text-transform:none; }
+    .brand span { color:var(--muted); font:12px/1.3 "Helvetica Neue", Arial, sans-serif; }
+    h1 { font:600 34px/1.1 var(--sans); letter-spacing:-.02em; margin:0 0 10px; text-wrap:balance; }
+    .lead { color:var(--muted); margin:0 0 28px; max-width:58ch; }
+    .status { display:flex; align-items:flex-start; gap:14px; padding:20px; border:1px solid var(--line); background:var(--card); border-radius:14px; }
+    .dot { width:12px; height:12px; border-radius:50%; background:var(--muted); margin-top:7px; flex:none; }
+    .dot.ok { background:var(--ok); box-shadow:0 0 0 4px rgba(47,107,69,.12); }
+    .dot.warn { background:var(--warn); box-shadow:0 0 0 4px rgba(164,107,31,.12); }
+    .dot.bad { background:var(--bad); box-shadow:0 0 0 4px rgba(163,52,42,.12); }
+    .status strong { display:block; font:600 18px/1.3 "Helvetica Neue", Arial, sans-serif; }
+    .status p { margin:4px 0 0; color:var(--muted); font-size:14px; }
+    .grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin:16px 0 0; }
+    .metric { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+    .metric span { display:block; color:var(--muted); font:13px/1.3 var(--sans); text-transform:none; letter-spacing:0; }
+    .metric b { display:block; margin-top:5px; font:600 16px/1.3 "Helvetica Neue", Arial, sans-serif; }
+    .actions { display:flex; align-items:center; gap:12px; margin-top:18px; flex-wrap:wrap; }
+    button { font:600 14px/1 var(--sans); border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:999px; min-height:44px; padding:10px 16px; cursor:pointer; }
+    button:hover { border-color:#cfc8b8; }
+    .note { margin-top:28px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    .note a { color:var(--ink); }
+    @media (max-width:560px) { .grid { grid-template-columns:1fr; } h1 { font-size:28px; } .wrap { padding-top:28px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand"><a href="/">Локус</a><span>статус сервиса</span></div>
+    <h1>Статус Локуса</h1>
+    <p class="lead">Проверяем API, базу данных и планировщик каждые 15 секунд. Страница показывает только техническое состояние — без данных клиентов.</p>
+
+    <section class="status" aria-live="polite">
+      <i class="dot" id="statusDot"></i>
+      <div>
+        <strong id="statusTitle">Проверяем…</strong>
+        <p id="statusText">Запрашиваем /api/health.</p>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="metric"><span>Версия</span><b id="metricVersion">—</b></div>
+      <div class="metric"><span>Uptime</span><b id="metricUptime">—</b></div>
+      <div class="metric"><span>База данных</span><b id="metricDb">—</b></div>
+      <div class="metric"><span>Планировщик</span><b id="metricScheduler">—</b></div>
+      <div class="metric"><span>Демо-доступ</span><b id="metricDemo">—</b></div>
+      <div class="metric"><span>Последняя проверка</span><b id="metricChecked">—</b></div>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="refreshStatus">Проверить сейчас</button>
+      <span class="note" id="statusUpdated" style="margin:0;border:0;padding:0"></span>
+    </div>
+
+    <p class="note">Если сервис недоступен, напишите на <a href="mailto:hello@locus.ru">hello@locus.ru</a> или создайте обращение в кабинете. Плановые работы публикуются здесь же.</p>
+  </main>
+  <script src="assets/js/status.js"></script>
+<script src="assets/js/sw-register.js" defer></script>
+</body>
+</html>

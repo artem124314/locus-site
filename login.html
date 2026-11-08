@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вход в Локус — кабинет бизнеса на Яндекс.Картах</title>
+<meta name="description" content="Вход в Локус: отзывы, витрина, сторис, автопилот и семантика для бизнеса на Яндекс.Картах. Регистрация и демо-доступ.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#11130e">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/auth.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body class="auth-body">
+<a class="skip-link" href="#authMain">К форме входа</a>
+
+<main class="auth-shell" id="authMain">
+  <section class="auth-brand" aria-label="О Локусе">
+    <a class="brand" href="index.html" aria-label="Локус — на главную">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.2 7-12A7 7 0 105 10c0 5.8 7 12 7 12z" fill="#f4f1e9"/><circle cx="12" cy="10" r="2.6" fill="#14150f"/></svg>
+      </span>
+      <span>Локус<small>кабинет для Карт</small></span>
+    </a>
+
+    <div class="auth-brand__body">
+      <h1>Один кабинет.<br>Вся карточка.</h1>
+      <p class="auth-brand__lead">Ответы, новости, сторис и ключевые слова. Сервис сам читает текст и отправляет его аккаунтом представителя.</p>
+
+      <ul class="auth-points">
+        <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Ответ на отзыв — за секунды, в вашем тоне</span></li>
+        <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Витрина и сторис без дизайнера и копирайтера</span></li>
+        <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Ключевые слова, которыми вас ищут. Карточка поднимается в выдаче. Первое место не обещаем.</span></li>
+      </ul>
+
+    </div>
+
+    <div class="auth-brand__foot">
+      <span>Локус · 2026</span>
+      <span>ИП Винокуров А. С.</span>
+    </div>
+  </section>
+
+  <section class="auth-panel" aria-label="Вход и регистрация">
+    <div class="auth-top">
+      <a href="index.html">← На сайт</a>
+      <span class="auth-badge">Кабинет для Яндекс.Карт</span>
+    </div>
+
+    <div class="auth-box">
+      <div class="auth-note" id="alreadyNote" hidden>
+        Вы уже вошли как <b id="alreadyName">Артём</b>.
+        <a href="app.html">Продолжить</a> · <button type="button" id="alreadyOut">Выйти</button>
+      </div>
+
+      <h2 id="authTitle">Вход в Локус</h2>
+      <p class="auth-sub" id="authSub">Войдите, чтобы открыть карточку, отзывы и очередь публикации.</p>
+
+      <div class="audit-flow" id="auditFlow" hidden>
+        <span class="audit-flow__step">Шаг 2 из 2 · аудит карточки</span>
+        <strong>Карточка сохранена</strong>
+        <p>Создайте аккаунт — откроется разбор этой точки. Отдельного пробного запаса нет. Карта не нужна. Ссылку уже подставили.</p>
+      </div>
+
+      <div class="oauth-block">
+        <label class="auth-check"><input type="checkbox" id="oauthOffer"> Принимаю <a href="legal.html#offer" target="_blank" rel="noopener">условия сервиса</a>. Счёт выставляется на этот аккаунт.</label>
+        <label class="auth-check"><input type="checkbox" id="oauthPd"> Даю отдельное <a href="legal.html#consent" target="_blank" rel="noopener">согласие на обработку персональных данных</a>.</label>
+        <label class="auth-check"><input type="checkbox" id="oauthMarketing"> Хочу получать новости и предложения (необязательно)</label>
+        <p class="auth-msg" id="yandexMsg" role="alert"></p>
+        <button class="oauth-btn" type="button" id="yandexAuth">
+          <span class="ya-badge" aria-hidden="true">Я</span>
+          <span>Войти через Яндекс</span>
+        </button>
+        <div class="auth-divider">или логин и пароль</div>
+      </div>
+
+      <div class="auth-tabs" role="tablist" aria-label="Вход или регистрация">
+        <button class="auth-tab" type="button" role="tab" id="tabLogin" aria-selected="true" aria-controls="loginForm" data-mode="login">Вход</button>
+        <button class="auth-tab" type="button" role="tab" id="tabSignup" aria-selected="false" aria-controls="signupForm" data-mode="signup">Регистрация</button>
+      </div>
+
+      <form class="auth-form" id="loginForm" novalidate>
+        <div class="field">
+          <label for="loginEmail">Логин</label>
+          <input id="loginEmail" name="login" type="text" autocomplete="username" placeholder="Ваш логин" required>
+        </div>
+        <div class="field">
+          <label for="loginPassword">Пароль</label>
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required>
+        </div>
+        <div class="auth-row">
+          <label class="auth-check"><input type="checkbox" checked> Запомнить на 30 дней</label>
+          <a href="#" id="forgotLink">Забыли пароль?</a>
+        </div>
+        <p class="auth-msg" id="loginMsg" role="alert"></p>
+        <button class="btn btn--wide" type="submit">Войти</button>
+        <p class="auth-hint">Демо-доступ: логин <b>demo@locus.ru</b> · пароль <b>demo1234</b></p>
+        <div id="resetBox" hidden>
+          <p class="auth-hint" id="resetHint">Новый пароль задаётся здесь. Письмо не отправляется.</p>
+          <div class="field">
+            <label for="resetPassword">Новый пароль</label>
+            <input id="resetPassword" type="password" minlength="6" autocomplete="new-password" placeholder="Минимум 6 символов">
+          </div>
+          <button class="btn btn--wide" type="button" id="resetSubmit">Сохранить пароль</button>
+        </div>
+      </form>
+
+      <form class="auth-form" id="signupForm" novalidate hidden>
+        <div class="field">
+          <label for="signupName">Как вас зовут</label>
+          <input id="signupName" name="name" type="text" autocomplete="name" placeholder="Введите имя" required>
+        </div>
+        <div class="field">
+          <label for="signupCompany">Название бизнеса</label>
+          <input id="signupCompany" name="company" type="text" autocomplete="organization" placeholder="Название с карточки" required>
+          <p class="field-hint" id="signupCardNote"></p>
+        </div>
+        <div class="field">
+          <label for="signupLogin">Логин</label>
+          <input id="signupLogin" name="login" type="text" autocomplete="username" placeholder="Например, poluden" required>
+        </div>
+        <div class="field">
+          <label for="signupCard">Ссылка на карточку</label>
+          <input id="signupCard" name="card" type="url" inputmode="url" placeholder="https://yandex.ru/maps/org/..." autocomplete="url">
+        </div>
+        <div class="field">
+          <label for="signupPassword">Пароль</label>
+          <input id="signupPassword" name="password" type="password" autocomplete="new-password" placeholder="Минимум 6 символов" minlength="6" required>
+        </div>
+        <label class="auth-check"><input type="checkbox" id="signupAgree"> Принимаю <a href="legal.html#offer" target="_blank" rel="noopener">условия сервиса</a>.</label>
+        <label class="auth-check"><input type="checkbox" id="signupPd"> Даю отдельное <a href="legal.html#consent" target="_blank" rel="noopener">согласие на обработку персональных данных</a>.</label>
+        <label class="auth-check"><input type="checkbox" id="signupMarketing"> Хочу получать новости и предложения (необязательно)</label>
+        <p class="auth-msg" id="signupMsg" role="alert"></p>
+        <button class="btn btn--wide" type="submit">Создать аккаунт</button>
+      </form>
+
+
+      <button class="btn btn--ghost btn--wide" type="button" id="demoBtn">Посмотреть пример кабинета</button>
+
+      <p class="auth-fine">Пример на экране вымышлен. Регистрация создаёт вашу организацию. По умолчанию сервис сам генерирует текст, читает его и отправляет в Яндекс аккаунтом представителя. Кнопка «Нужно согласование» — добровольный режим.</p>
+      <p class="auth-legal">Нажимая кнопку, вы принимаете <a href="legal.html#offer">оферту</a> и <a href="legal.html#privacy">политику обработки данных</a>. Оператор: ИП Винокуров Артём Сергеевич. Локус — независимый сервис, не официальный продукт Яндекса.</p>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/session.js?v=owner-cabinet1"></script>
+<script src="assets/js/auth.js?v=yandex-oauth1"></script>
+<script src="assets/js/consent.js"></script>
+<script src="assets/js/sw-register.js" defer></script>
+</body>
+</html>
